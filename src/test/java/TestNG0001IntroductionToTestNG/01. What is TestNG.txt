@@ -1,5 +1,5 @@
 What is TestNG?
-TestNG is an automation testing framework in which NG stands for “Next Generation”. TestNG is inspired by JUnit which uses the annotations (@). TestNG overcomes the disadvantages of JUnit and is designed to make end-to-end testing easy.
+TestNG is an automation testing framework in which NG stands for â€œNext Generationâ€�. TestNG is inspired by JUnit which uses the annotations (@). TestNG overcomes the disadvantages of JUnit and is designed to make end-to-end testing easy.
 
 Using TestNG, you can generate a proper report, and you can easily come to know how many test cases are passed, failed, and skipped. You can execute the failed test cases separately.
 
@@ -19,3 +19,10 @@ TestNG is one of the most widely used open source testing framework used in auto
 - If you want to run a test case A before that as a pre-request you need to run multiple test cases before you begin a test case A. You can set and map with the help of TestNG so that pre-request test cases run first and then only it will trigger a test case A. In such way, you can control the test cases.
 - TestNG framework came after Junit, and TestNG framework adds more powerful functionality and easier to use.
 - TestNG framework eliminates the limitations of the older framework by providing more powerful and flexible test cases with help of easy annotations, grouping, sequencing and parametrizing.
+
+
+What activities we can perform using TestNG?
+- Parameterization
+- Configure Parallel testing
+- Priorities
+- Add Group Dependency

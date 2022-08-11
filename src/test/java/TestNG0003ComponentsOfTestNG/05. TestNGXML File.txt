@@ -1,0 +1,86 @@
+Importance of XML file in TestNG Configuration
+In TestNG, you can define multiple test cases in a single class whereas, in Java, you can define only one test in a single class in the main() method. In Java, if you want to create one more test, then you need to create another java file and define the test in the main() method.
+
+Instead of creating test cases in different classes, we recommend you to use TestNG framework that allows you to create multiple test cases in a single class.
+
+You can create multiple test cases with the help of @Test annotation.
+
+
+
+Example
+public class test  
+{  
+   @Test  
+    public void test1()                      // First test case.  
+  {  
+    System.out.println("test1");   
+  }   
+  @Test  
+   public  void test2()                     // Second test case.  
+{  
+ System.out.println("test2");  
+ }}
+
+
+
+The above code consists of a class test. The class test consists of two test cases, i.e., test1() and test2(). You can differentiate the test cases by considering the sequence of test cases. In the above code, the test case test2() is written in the second @Test annotation, so this test case will be considered as the second case.
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">  
+<suite name="loan_department">  
+  <test name="Personal_loan">  
+  <classes>  
+  <class name="day1.module1"/>  
+  </classes>  
+  </test> <!-- Test -->  
+  <test name="Car_loan">  
+  <classes>  
+  <class name="day1.module2">  
+  <methods>  
+  <exclude name = "MobileLoginCarLoan"/>  
+  </methods>  
+  </class>  
+  </classes>  
+  </test>  
+</suite> <!-- Suite -->  
+
+
+
+
+
+Exclude/Include test cases
+TestNG provides the feature of enabling and disabling the test cases. We can disable a set of test cases from getting executed. For example, consider a scenario where a serious bug occurs in a feature due to certain tests, so we need to disable the test cases from being executed.
+
+In TestNG, test cases can be disabled in two ways:
+- You can disable the test case in a @Test annotation.
+- You can disable the test case in the XML file.
+
+TestNG @Test enable parameter
+You can disable or exclude the test cases by using the enable attribute to the @Test annotation and assign False value to the enable attribute.
+
+
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">  
+<suite name="loan_department">  
+  <test name="Personal_loan">  
+  <classes>  
+  <class name="day1.module1"/>  
+  </classes>  
+  </test> <!-- Test -->  
+  <test name="Car_loan">  
+  <classes>  
+  <class name="day1.module2">  
+  <methods>  
+  <exclude name = "MobileLoginCarLoan"/>  
+  </methods>  
+  </class>  
+  </classes>  
+  </test>  
+</suite> <!-- Suite -->  
+
+
+
+
+

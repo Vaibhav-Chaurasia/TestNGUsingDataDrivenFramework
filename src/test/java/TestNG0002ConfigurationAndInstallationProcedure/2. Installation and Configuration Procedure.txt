@@ -1,0 +1,61 @@
+NOTE - THIS IS BEST APPLIED FOR WINDOWS SYSTEM, IN OTHER OPERATING SYSTEMS STEPS AND PROCEDURE MAY DIFFER.
+
+Installation Procedure
+NOTE - THIS NOTES IS BEST AS PER THE CURRENT REQUIREMENT, IN FUTURE ANY THING MAY CHANGE
+
+Setup Java
+1. Go to the Link - https://www.oracle.com/java/technologies/downloads/archive/
+2. Choose any version as per the requirement
+3. Download the version
+4. Install in the system
+
+Note - 
+1. For Version 10 or older, download JDK + JRE.
+2. For Versuib 11 or later, JRE has been removed
+
+
+Set the path
+For Windows 8 and above
+1. Open Environment variables
+2. Go to User Variable section -> Click on New Button and write
+	Variable Name - JAVA_HOME
+	Variable Value - C:\Program Files\Java\jdk-11.0.13 (For the reference)
+3. Click on OK button
+4. Now, Go to System variable section
+5. Search for variable "path"
+6. Double click on Path -> Click on new button
+7. Add the path - C:\Program Files\Java\jdk-11.0.13\bin (For the reference)
+8. Click on Ok for every window opens until all windows closed.
+
+Note - For more details and for other versions, follow the link - https://www.java.com/en/download/help/path.html
+
+
+Download and Install Eclipse
+1. Go to the link - https://www.eclipse.org/downloads/
+2. Download Eclipse IDE
+3. Double click on setup file
+4. Choose first option while installation
+5. Follow further instructions.
+
+
+Configure Java Client
+1. Go to the link - https://www.selenium.dev/downloads/
+2. Choose the programming language like Java
+3. Click on the programming language link to download.
+4. Unzip the downloaded file.
+5. Now, Create the Java Project in eclipse
+6. Right click on the project and choose Build Path -> Then choose, Configure build path
+7. Select libraries from the upper tabs.
+8. Click on "Add External Jars"
+9. Go the the extracted zip file
+10. Choose all the jars and click on Open button to include.
+11. Repeat step number 8 and 9
+12. Click on "Lib" folder -> Select all the jar files in the lib folder and click on open button.
+13. Finally, click on Apply and Close button.
+
+Install TestNG
+1. Go to Help from the menu in eclipse
+2. Choose option Eclipse MarketPlace
+3. Search for "TestNG"
+4. Now, Choose "TestNG for Eclipse" by Cedric Beust.
+5. Install the Plugin.
