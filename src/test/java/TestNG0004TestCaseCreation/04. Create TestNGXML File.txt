@@ -1,0 +1,8 @@
+1. Once test case gets completed, we need to run that test cases.
+2. Now go to the Project and do right click on Project
+3. Go to TestNG
+4. Select Convert to TestNG
+5. Choose the classes you want to run
+6. Click on Finish
+7. Now, right click on testNG
+8. Run as TestNG

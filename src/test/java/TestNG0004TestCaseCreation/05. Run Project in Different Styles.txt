@@ -1,0 +1,23 @@
+Single TestCase When Multiple Test Case written in single class
+1. Under each annotation of @Test, Run|Debug configuration is there.
+2. So, click on run and that particular test case runs.
+
+
+Whole Class
+1. Right class on class, you want to run.
+2. Go to 'Run As' -> Click on TestNG
+
+
+All Suites
+1. Include the folders and classes into the TestNG file.
+2. Now, Right click on testng.xml file
+3. Go to Run As -> Click on TestNG Suite.
+
+
+
+Whole Project using Maven either in Eclipse or via CI/CD
+1. For that, automation tester needs to do configuration in pom.xml file
+2. Go to Project Name -> Right click on project
+3. Choose Run As -> Click on Maven Clean
+4. Choose Run As -> Click on Maven build -> In goals field enter - clean install
+5. Click on Run
