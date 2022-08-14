@@ -1,0 +1,25 @@
+Pre Requisites for Java
+1. Operating system (Any)
+2. IDE - Eclipse or Intellij (Any of them)
+3. Java JDK and JRE (8 or above version)
+4. Setup the path
+5. Knowledge of Java Concepts
+
+
+Prerequisites for Selenium
+1. Java should be installed in the system.
+2. Eclipse IDE should be installed in the system.
+3. Java Client should be imported.
+4. ChromeDriver/GeckoDriver should be imported.
+5. Automation engineer should know atleast one programming language like Java, Python, C# etc.
+5. Concepts of Selenium should be known.
+6. Automation tester should know how to take xpaths.
+
+
+Prerequisites for TestNG
+1. Java should be installed in the system.
+2. Eclipse IDE should be installed in the system.
+3. Maven Project should be created.
+4. Dependencies should be added from maven central repository.
+5. TestNG should be installed in eclipse from the market place.
+6. Automation tester should have good knowledge of TestNG annotations and Page Factory. 

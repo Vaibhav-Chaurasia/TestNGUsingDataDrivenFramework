@@ -1,0 +1,15 @@
+1. Open Eclipse
+2. Go to Main Menu at the top and click on 'File' Option.
+3. Select New option
+4. In Sub menu, select "Other"
+5. Now, in search bar, search for "Maven"
+6. Choose "Maven Project"
+7. Click on Next button
+8. Now, choose your workspace, i.e. where you want to keep your project.
+9. Check the checkbox of "Create a simple project(skip archetype selection)"
+10. Now, in Artifact group
+	- Enter Group ID
+	- Enter Artifact ID
+	- Most the time engineers put the same name. It is the project name in actual which got displayed after creation.
+11. Click on Finish button and wait untill project building
+12. Finally go to Package Explorer in left side to view the project structure.
