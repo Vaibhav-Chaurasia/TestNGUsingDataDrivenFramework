@@ -1,0 +1,62 @@
+Attributes works with the following Annotations
+
+For @Test
+- AlwaysRun
+- DependsOnGroup
+- DependsOnMethod
+- Description
+- DataProvider
+- Enabled
+- expectedExceptions
+- expectedExceptionsMessageRegExp
+- groups
+- ignoreMissingDependencies
+- invocationCount
+- invoicationTimeOut
+- parameter
+- priority
+- retryAnalyzer
+- sequential
+- singleThreaded
+- skipFailedinvocations
+- sucesspercentage
+- suitename
+- Testname
+- threadpoolsize
+- timeout
+
+
+For @BeforeTest, @AfterTest, @BeforeSuite, @AfterSuite, @BeforeClass, @AfterClass
+- AlwaysRun
+- DependsOnGroup
+- DependsOnMethod
+- Description
+- Enabled
+- groups
+- inheritGroups
+- timeout
+
+
+For @BeforeMethod, @AfterMethod
+- AlwaysRun
+- DependsOnGroup
+- DependsOnMethod
+- Description
+- Enabled
+- groups
+- inheritGroups
+- timeout
+- lastTimeOnly
+
+
+For @BeforeGroup, @AfterGroup
+- AlwaysRun
+- DependsOnGroup
+- DependsOnMethod
+- Description
+- Enabled
+- groups
+- inheritGroups
+- timeout
+- lastTimeOnly
+- value

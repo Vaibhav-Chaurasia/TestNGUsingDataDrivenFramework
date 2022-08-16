@@ -2,34 +2,18 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="EnterData"/>
+      </run>
+    </groups>
     <classes>
-      <class name="TestNG0006AnnotationImplementation.AfterTestAnnotation">
+      <class name="TestNG0008AnnotationAttributes.Groups">
         <methods>
-          <include name="quit"/>
-          <include name="enterFullName"/>
-          <include name="enterEmailID"/>
-          <include name="launchBrowser"/>
+          <include name="enterLastName"/>
+          <include name="enterFirstName"/>
         </methods>
-      </class> <!-- TestNG0006AnnotationImplementation.AfterTestAnnotation -->
-      <class name="TestNG0006AnnotationImplementation.SingleTestAnnotation">
-        <methods>
-          <include name="ac"/>
-        </methods>
-      </class> <!-- TestNG0006AnnotationImplementation.SingleTestAnnotation -->
-      <class name="TestNG0006AnnotationImplementation.MultipleTestAnnotationWithPriority">
-        <methods>
-          <include name="openPrivacyPolicy"/>
-          <include name="navigateToGoogle"/>
-        </methods>
-      </class> <!-- TestNG0006AnnotationImplementation.MultipleTestAnnotationWithPriority -->
-      <class name="TestNG0006AnnotationImplementation.BeforeClassAnnotation">
-        <methods>
-          <include name="enterEmailID"/>
-          <include name="launchBrowser"/>
-          <include name="enterFullName"/>
-          <include name="maximizeTheWindow"/>
-        </methods>
-      </class> <!-- TestNG0006AnnotationImplementation.BeforeClassAnnotation -->
+      </class> <!-- TestNG0008AnnotationAttributes.Groups -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

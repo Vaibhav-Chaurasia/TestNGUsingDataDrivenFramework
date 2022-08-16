@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Aug 14 21:54:34 IST 2022</td>
+<td>Started on:</td><td>Tue Aug 16 20:45:08 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>15 seconds (15534 ms)</td>
+<tr><td>Total time:</td><td>10 seconds (10051 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,33 +67,37 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TestNG0006AnnotationImplementation.GroupAfterGroupAnnotation.enterEmailID()'><b>enterEmailID</b><br>Test class: TestNG0006AnnotationImplementation.GroupAfterGroupAnnotation</td>
-<td></td>
-<td>0</td>
-<td>TestNG0006AnnotationImplementation.GroupAfterGroupAnnotation@5e403b4a</td></tr>
-<tr>
-<td title='TestNG0006AnnotationImplementation.GroupAfterGroupAnnotation.enterEmailIDAfterDot()'><b>enterEmailIDAfterDot</b><br>Test class: TestNG0006AnnotationImplementation.GroupAfterGroupAnnotation</td>
-<td></td>
-<td>0</td>
-<td>TestNG0006AnnotationImplementation.GroupAfterGroupAnnotation@5e403b4a</td></tr>
-<tr>
-<td title='TestNG0006AnnotationImplementation.GroupAfterGroupAnnotation.enterFullName()'><b>enterFullName</b><br>Test class: TestNG0006AnnotationImplementation.GroupAfterGroupAnnotation</td>
-<td></td>
-<td>2</td>
-<td>TestNG0006AnnotationImplementation.GroupAfterGroupAnnotation@5e403b4a</td></tr>
-<tr>
-<td title='TestNG0006AnnotationImplementation.GroupAfterGroupAnnotation.enterLastName()'><b>enterLastName</b><br>Test class: TestNG0006AnnotationImplementation.GroupAfterGroupAnnotation</td>
-<td></td>
-<td>2</td>
-<td>TestNG0006AnnotationImplementation.GroupAfterGroupAnnotation@5e403b4a</td></tr>
+<td title='TestNG0008AnnotationAttributes.Timeout.openPrivacyPolicy()'><b>openPrivacyPolicy</b><br>Test class: TestNG0008AnnotationAttributes.Timeout</td>
+<td><div><pre>org.testng.internal.thread.ThreadTimeoutException: Method TestNG0008AnnotationAttributes.Timeout.openPrivacyPolicy() didn&apos;t finish within the time-out 10000
+	at java.base@11.0.13/java.lang.reflect.InvocationTargetException.getCause(InvocationTargetException.java:110)
+	at app//org.testng.internal.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:61)
+	at app//org.testng.internal.InvokeMethodRunnable.run(InvokeMethodRunnable.java:44)
+	at java.base@11.0.13/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base@11.0.13/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base@11.0.13/java.lang.Thread.run(Thread.java:834)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1663888181", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1663888181'><pre>org.testng.internal.thread.ThreadTimeoutException: Method TestNG0008AnnotationAttributes.Timeout.openPrivacyPolicy() didn&apos;t finish within the time-out 10000
+	at java.base@11.0.13/java.lang.reflect.InvocationTargetException.getCause(InvocationTargetException.java:110)
+	at app//org.testng.internal.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:61)
+	at app//org.testng.internal.InvokeMethodRunnable.run(InvokeMethodRunnable.java:44)
+	at java.base@11.0.13/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base@11.0.13/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base@11.0.13/java.lang.Thread.run(Thread.java:834)
+</pre></div></td>
+<td>10</td>
+<td>TestNG0008AnnotationAttributes.Timeout@55cf0d14</td></tr>
 </table><p>
 </body>
 </html>

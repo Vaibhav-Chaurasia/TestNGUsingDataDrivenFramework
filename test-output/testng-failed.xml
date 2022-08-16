@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNG0006AnnotationImplementation.SuiteAfterSuiteAnnotation">
+      <class name="TestNG0008AnnotationAttributes.Timeout">
         <methods>
-          <include name="enterEmail"/>
-          <include name="quitDriver"/>
-          <include name="launchBrowser"/>
+          <include name="openPrivacyPolicy"/>
         </methods>
-      </class> <!-- TestNG0006AnnotationImplementation.SuiteAfterSuiteAnnotation -->
+      </class> <!-- TestNG0008AnnotationAttributes.Timeout -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

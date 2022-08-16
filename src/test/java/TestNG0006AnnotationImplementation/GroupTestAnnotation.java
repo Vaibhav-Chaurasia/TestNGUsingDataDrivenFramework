@@ -3,7 +3,7 @@ package TestNG0006AnnotationImplementation;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class GroupAfterGroupAnnotation extends GroupBeforeGroupAnnotation{
+public class GroupTestAnnotation extends GroupAfterBeforeGroupAnnotation{
 	
 	@Test (priority = 1, groups = "User Details")
 	public void enterFullName() throws InterruptedException {

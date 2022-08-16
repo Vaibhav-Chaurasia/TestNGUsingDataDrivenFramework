@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeGroups;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class GroupBeforeGroupAnnotation {
+public class GroupAfterBeforeGroupAnnotation {
 	
 	public WebDriver driver;
 	
