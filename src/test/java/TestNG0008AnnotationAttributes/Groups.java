@@ -14,12 +14,16 @@ public class Groups {
 	/*
 	 * 
 	 * It specifies the list of groups this method or class belongs to.
+	 * If, we are executing groups, then each annotation, which is linked to the 
+	 * @test annotation, should also have an attribute "group".
 	 * 
+	 * To run this, go to testng.xml file and write code over there to run.
+	 * For this example we have file named as - 'GroupExecution.xml' in root folder
 	 * */
 
 	public WebDriver driver;
 	
-	@BeforeTest
+	@BeforeTest (groups = {"EnterData", "Launch"})
 	public void launchBrowser() throws InterruptedException{
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();

@@ -1,3 +1,16 @@
+Most Important Attributes used frequently while development are -
+- AlwaysRun
+- DependsOnGroup
+- DependsOnMethod
+- Description
+- DataProvider
+- Enabled
+- groups
+- invocationCount
+- priority
+- timeout
+
+
 Attributes works with the following Annotations
 
 For @Test
@@ -13,10 +26,10 @@ For @Test
 - ignoreMissingDependencies
 - invocationCount
 - invoicationTimeOut
-- parameter
+- parameter - Depracated
 - priority
 - retryAnalyzer
-- sequential
+- sequential - Depracated
 - singleThreaded
 - skipFailedinvocations
 - sucesspercentage
@@ -47,6 +60,7 @@ For @BeforeMethod, @AfterMethod
 - inheritGroups
 - timeout
 - lastTimeOnly
+- firsttimeonly
 
 
 For @BeforeGroup, @AfterGroup

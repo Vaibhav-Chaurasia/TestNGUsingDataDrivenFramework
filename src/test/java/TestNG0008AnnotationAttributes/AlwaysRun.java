@@ -18,7 +18,7 @@ public class AlwaysRun {
 
 	public WebDriver driver;
 	
-	@BeforeTest
+	@BeforeTest (alwaysRun = true)
 	public void launchBrowser() throws InterruptedException {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();

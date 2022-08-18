@@ -1,5 +1,7 @@
 package TestNG0008AnnotationAttributes;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,13 +33,13 @@ public class expectedException {
 		driver = new ChromeDriver();
 		driver.get("https://accounts.lambdatest.com/register");
 		driver.manage().window().maximize();
+		Thread.sleep(2000);
 	}
 
-	@Test(expectedExceptions = InterruptedException.class)
-	public void waiting() throws InterruptedException {
-		Thread.sleep(2000);
-		System.out.println("Interrupted Exceptions");
-		throw new InterruptedException();
+	@Test(expectedExceptions = { IOException.class })
+	public void exceptionTestOne() throws Exception {
+		System.out.println("Printing Exceptions...........");
+		throw new IOException();
 	}
 
 	@Test (priority = 1)

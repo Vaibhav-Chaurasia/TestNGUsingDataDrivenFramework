@@ -38,6 +38,9 @@ Order of Annotations in which they executes
 @AfterSuite
 
 
+If priority is not defined then, any annotation runs in alphabetical order.
+
+
 Benefits of using TestNG Annotations:
 - TestNG Annotations made the life of testers very easy. Based on your requirements, you can access the test methods, i.e., it has no predefined pattern or format.
 - You can pass the additional parameters to TestNG annotations.

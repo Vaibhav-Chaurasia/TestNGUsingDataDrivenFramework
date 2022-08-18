@@ -12,7 +12,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Enabled {
 	
 	/*
-	 * It is the description of this method.
+	 * Disabling a test can be achieved in 2 ways. One is from testng.xml configuration file 
+	 * and the second is from the Test annotation property/attribute (i.e. enabled). 
+	 * These will disable the said test method from being executed as part of the test suite. 
+	 * If this attribute is set to false for the Test annotation at class level, all the public 
+	 * methods inside the class will be disabled.
 	 * */
 
 	public WebDriver driver;
