@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNG0008AnnotationAttributes.successPercentage">
+      <class name="TestNG0010DataFromNativeExcelFile.PrintListOfData">
         <methods>
-          <include name="sampleTest1"/>
-          <include name="sampleTest2"/>
-          <include name="sampleTest4"/>
+          <include name="printListOfData"/>
+          <include name="launchBrowser"/>
         </methods>
-      </class> <!-- TestNG0008AnnotationAttributes.successPercentage -->
+      </class> <!-- TestNG0010DataFromNativeExcelFile.PrintListOfData -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
