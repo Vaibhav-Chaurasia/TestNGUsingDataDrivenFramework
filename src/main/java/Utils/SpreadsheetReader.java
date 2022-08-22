@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,24 +20,29 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.sheets.v4.Sheets;
 import com.google.api.services.sheets.v4.SheetsScopes;
+import com.google.api.services.sheets.v4.model.AddSheetRequest;
+import com.google.api.services.sheets.v4.model.BatchUpdateSpreadsheetRequest;
+import com.google.api.services.sheets.v4.model.Request;
+import com.google.api.services.sheets.v4.model.SheetProperties;
+import com.google.api.services.sheets.v4.model.UpdateValuesResponse;
 import com.google.api.services.sheets.v4.model.ValueRange;
 
 public class SpreadsheetReader {
 	/** Application name. */
-	private static final String APPLICATION_NAME =
-			"Google Sheets API Java Quickstart";
-	
-	public static final String SPREADSHEET_ID="1UWirtflQfy4h_X7vxAaIX1HqnxyowXVoCo6J6QSJn-8";
+	private static final String APPLICATION_NAME = "Google Sheets API Java Quickstart";
+
+	public static final String SPREADSHEET_ID = "1UWirtflQfy4h_X7vxAaIX1HqnxyowXVoCo6J6QSJn-8";
+
 	/** Directory to store user credentials for this application. */
-	private static final java.io.File DATA_STORE_DIR = new java.io.File(
-			System.getProperty("user.home"), ".credentials/2/sheets.googleapis.com-java-quickstart");
+	private static final java.io.File DATA_STORE_DIR = new java.io.File(System.getProperty("user.home"), ".credentials/2/sheets.googleapis.com-java-quickstart");
 
 	/** Global instance of the {@link FileDataStoreFactory}. */
 	private static FileDataStoreFactory DATA_STORE_FACTORY;
 
 	/** Global instance of the JSON factory. */
-	private static final JsonFactory JSON_FACTORY =
-			JacksonFactory.getDefaultInstance();
+	private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
+
+	static List<List<Object>> values;
 
 	/** Global instance of the HTTP transport. */
 	private static HttpTransport HTTP_TRANSPORT;
@@ -58,31 +64,31 @@ public class SpreadsheetReader {
 			System.exit(1);
 		}
 	}
+
 	/**
 	 * Creates an authorized Credential object.
 	 * @return an authorized Credential object.
 	 * @throws IOException
 	 */
 	public static Credential authorize() throws Exception {
+
 		// Load client secrets.
-		InputStream in =
-				new FileInputStream("client_secret.json");  
-		GoogleClientSecrets clientSecrets =
-				GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
+		InputStream in = new FileInputStream("client_secret.json");  
+
+		GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
 
 		// Build flow and trigger user authorization request.
-		GoogleAuthorizationCodeFlow flow =
+		GoogleAuthorizationCodeFlow flow = 
 				new GoogleAuthorizationCodeFlow.Builder(
 						HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, SCOPES)
 				.setDataStoreFactory(DATA_STORE_FACTORY)
 				.setAccessType("offline")
 				.build();
-		Credential credential = new AuthorizationCodeInstalledApp(
-				flow, new LocalServerReceiver()).authorize("user");
-		System.out.println(
-				"Credentials saved to " + DATA_STORE_DIR.getAbsolutePath());
+		Credential credential = new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver()).authorize("user");
+		System.out.println("Credentials saved to " + DATA_STORE_DIR.getAbsolutePath());
 		return credential;
 	}
+
 	/**
 	 * Build and return an authorized Sheets API client service.
 	 * @return an authorized Sheets API client service
@@ -101,13 +107,13 @@ public class SpreadsheetReader {
 	 * @return
 	 * @throws Exception
 	 */
-	public static List<List<Object>> readSpreadSheet(String sheetName) throws Exception
+	public static List<List<Object>> readCompleteSpreadSheet(String sheetName) throws Exception
 	{
 		// Build a new authorized API client service.
 		Sheets service = getSheetsService();
 
 		// Prints the names and majors of students in a sample spreadsheet:
-		// https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+		// https://docs.google.com/spreadsheets/d/1UWirtflQfy4h_X7vxAaIX1HqnxyowXVoCo6J6QSJn-8/edit
 		String range = sheetName+"!A:AZ";
 		ValueRange response = service.spreadsheets().values()
 				.get(SPREADSHEET_ID, range)
@@ -116,58 +122,75 @@ public class SpreadsheetReader {
 		List<List<Object>> values = response.getValues();
 		return values;
 	}
-	
-	public void whenWriteSheet_thenReadSheetOk(String sheetName) throws Exception {
+
+	public static int getTotalNumberOfRows(String sheetName) throws Exception {
+
+		// Build a new authorized API client service.
 		Sheets service = getSheetsService();
-		
-	    ValueRange body = new ValueRange()
-	      .setValues(Arrays.asList(
-	        Arrays.asList("Expenses January", "books"), 
-	        Arrays.asList("books", "30"), 
-	        Arrays.asList("pens", "10"),
-	        Arrays.asList("Expenses February"), 
-	        Arrays.asList("clothes", "20"),
-	        Arrays.asList("shoes", "5")));
-	    
-	    String range = sheetName+"!A:AZ";
-	    service.spreadsheets().values()
-	      .update(SPREADSHEET_ID, range, body)
-	      .setValueInputOption("RAW")
-	      .execute();
-	    
-//	    List<ValueRange> data = new ArrayList<>();
-//	    String range = sheetName+"!A:AZ";
-//	    data.add(new ValueRange()
-//	      .setRange(range)
-//	      .setValues(Arrays.asList(
-//	        Arrays.asList("January Total", "=B2+B3"))));
-//	    data.add(new ValueRange()
-//	      .setRange(range)
-//	      .setValues(Arrays.asList(
-//	        Arrays.asList("February Total", "=B5+B6"))));
-//
-//	    BatchUpdateValuesRequest batchBody = new BatchUpdateValuesRequest()
-//	      .setValueInputOption("USER_ENTERED")
-//	      .setData(data);
-//
-//	    BatchUpdateValuesResponse batchResult = service.spreadsheets().values()
-//	      .batchUpdate(SPREADSHEET_ID, batchBody)
-//	      .execute();
-		
-//		String range = sheetName+"!A:AZ";
-//	    
-//	    ValueRange appendBody = new ValueRange()
-//	    		  .setValues(Arrays.asList(
-//	    		    Arrays.asList("Total", "=E1+E4")));
-//	    		AppendValuesResponse appendResult = service.spreadsheets().values()
-//	    		  .append(SPREADSHEET_ID, "A8", appendBody)
-//	    		  .setValueInputOption("USER_ENTERED")
-//	    		  .setInsertDataOption("INSERT_ROWS")
-//	    		  .setIncludeValuesInResponse(true)
-//	    		  .execute();
-	    		        
-	    		
-	    
-//	    System.out.println("abc");
+
+		List<List<Object>> response = service.spreadsheets().values()
+				.get(SPREADSHEET_ID, sheetName)
+				.execute().getValues();
+
+		int numRows = response != null ? response.size() : 0;
+		System.out.printf("%d rows retrieved. in '" + sheetName + "'\n", numRows);
+		return numRows;
+	}
+
+	public void createSheetAndColumn(String sheetName, List<Object> columnNames) throws Exception {
+		if (!sheetName.equals("")) {
+			createNewSheet(SPREADSHEET_ID, sheetName);
+			writeSheet(columnNames, sheetName + "!A1");
+		}
+	}
+
+	public void writeSheet(List<Object> inputData, String sheetNameAndRange) throws Exception {
+
+		// Build a new authorized API client service.
+		Sheets service = getSheetsService();
+
+		List<List<Object>> values = Arrays.asList(inputData);
+		ValueRange body = new ValueRange().setValues(values);
+
+		UpdateValuesResponse result = service.spreadsheets().values().update(SPREADSHEET_ID, sheetNameAndRange, body)
+				.setValueInputOption("USER_ENTERED").execute();
+
+		System.out.printf("%d cells updated.\n", result.getUpdatedCells());
+	}
+	
+
+	public void createNewSheet(String SPREADSHEET_ID, String newsheetTitle) throws Exception {
+
+		// Build a new authorized API client service.
+		Sheets service = getSheetsService();
+
+		// Create a new AddSheetRequest
+		AddSheetRequest addSheetRequest = new AddSheetRequest();
+
+		SheetProperties sheetProperties = new SheetProperties();
+		sheetProperties.setIndex(0);
+
+		// Add the sheetName to the sheetProperties
+		addSheetRequest.setProperties(sheetProperties);
+		addSheetRequest.setProperties(sheetProperties.setTitle(newsheetTitle));
+
+		// Create batchUpdateSpreadsheetRequest
+		BatchUpdateSpreadsheetRequest batchUpdateSpreadsheetRequest = new BatchUpdateSpreadsheetRequest();
+
+		// Create requestList and set it on the batchUpdateSpreadsheetRequest
+		List<Request> requestsList = new ArrayList<Request>();
+		batchUpdateSpreadsheetRequest.setRequests(requestsList);
+
+		// Create a new request with containing the addSheetRequest and add it to the
+		// requestList
+		Request request = new Request();
+		request.setAddSheet(addSheetRequest);
+		requestsList.add(request);
+
+		// Add the requestList to the batchUpdateSpreadsheetRequest
+		batchUpdateSpreadsheetRequest.setRequests(requestsList);
+
+		// Call the sheets API to execute the batchUpdate
+		service.spreadsheets().batchUpdate(SPREADSHEET_ID, batchUpdateSpreadsheetRequest).execute();
 	}
 }

@@ -1,0 +1,26 @@
+Operations Reference in TestNG.xml file
+
+1. Run single class - firstprogram.xml
+
+2. Run multiple class - runMultipleClasses.xml
+
+3. Run multiple class in different style - runMultipleClassesInAnotherStyle.xml
+
+4. Parameterization using annotation at test level - parameterizationUsingAnnotationAtTestLevel.xml, ParameterizationUsingAnnotation.java
+
+5. Parameterization using annotation at suite level - parameterizationUsingAnnotationAtTestLevel.xml, ParameterizationUsingAnnotation.java
+
+6. Parameterization using data provider in different class - DataProviderInSaperateClass.xml, ParameterizationUsingDataProviderInSaperateClass.java
+
+7. Parameterization using data provider in same class - DataProviderInSameClass.xml, ParameterizationUsingDataProviderInSameClass.java
+
+8. Parameterization using data provider ITestContext to run different groups - DataProviderUsingITestContext.xml, ParameterizationUsingDataProviderUsingITextContext.java
+
+
+
+Listeners
+1. ITestListener - ITestListener.xml
+2. IAnnotationListener - IAnnotationTransformer.xml
+3. IExecutionListener - IExecutionListener.xml
+4. IHookableListener - IHookableListener.xml
+5. IInvokedMethodListener - IInvokedMethodListener.xml 

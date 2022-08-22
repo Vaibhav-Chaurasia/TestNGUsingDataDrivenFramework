@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="EmailPassword(failed)">
     <groups>
       <run>
-        <include name="EnterData"/>
+        <include name="A"/>
+        <include name="B"/>
       </run>
     </groups>
     <classes>
-      <class name="TestNG0008AnnotationAttributes.Groups">
+      <class name="TestNG0012TestNGXMLOperations.ParameterizationUsingDataProviderUsingITextContext">
         <methods>
-          <include name="enterLastName"/>
-          <include name="enterFirstName"/>
+          <include name="loginFormGroupB"/>
         </methods>
-      </class> <!-- TestNG0008AnnotationAttributes.Groups -->
+      </class> <!-- TestNG0012TestNGXMLOperations.ParameterizationUsingDataProviderUsingITextContext -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- EmailPassword(failed) -->
 </suite> <!-- Failed suite [Suite] -->

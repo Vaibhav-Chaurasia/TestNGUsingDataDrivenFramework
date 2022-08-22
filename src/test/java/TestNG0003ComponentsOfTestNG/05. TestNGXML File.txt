@@ -5,8 +5,6 @@ Instead of creating test cases in different classes, we recommend you to use Tes
 
 You can create multiple test cases with the help of @Test annotation.
 
-
-
 Example
 public class test  
 {  
@@ -79,3 +77,28 @@ You can disable or exclude the test cases by using the enable attribute to the @
   </classes>  
   </test>  
 </suite> <!-- Suite -->
+
+
+
+Steps to create TestNG file
+1. Go to project
+2. Right click on project
+3. Go to TestNG option
+4. Choose Covert to TestNG
+5. Choose the classes you want to run
+6. Remove other classes
+7. Click on Finish
+8. Open testng.xml file -> Rename if you want
+9. Right click on the file and run it as "TestNG Suite"
+
+
+Major advantages of TestNG.xml file are:
+It provides parallel execution of test methods.
+It allows the dependency of one test method on another test method.
+It helps in prioritizing our test methods.
+It allows grouping of test methods into test groups.
+It supports the parameterization of test cases using @Parameters annotation.
+It helps in Data-driven testing using @DataProvider annotation.
+It has different types of assertions that help in validating the expected results with the actual results.
+It has different types of HTML reports, Extent reports, etc. for a better and clear understanding of our test summary.
+It has listeners who help in creating logs. 

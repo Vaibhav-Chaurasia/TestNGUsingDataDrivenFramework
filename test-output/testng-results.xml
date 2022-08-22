@@ -2,24 +2,32 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-08-21T14:46:37Z" name="Default suite" finished-at="2022-08-21T14:46:48Z" duration-ms="11611">
+  <suite started-at="2022-08-22T14:42:11Z" name="Suite" finished-at="2022-08-22T14:42:26Z" duration-ms="14445">
     <groups>
     </groups>
-    <test started-at="2022-08-21T14:46:37Z" name="Default test" finished-at="2022-08-21T14:46:48Z" duration-ms="11611">
-      <class name="TestNG0010DataFromNativeExcelFile.PrintListOfData">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:TestNG0010DataFromNativeExcelFile.PrintListOfData@3aee3976]" started-at="2022-08-21T14:46:37Z" name="launchBrowser" finished-at="2022-08-21T14:46:47Z" duration-ms="9642" status="PASS">
+    <test started-at="2022-08-22T14:42:11Z" name="Test" finished-at="2022-08-22T14:42:26Z" duration-ms="14445">
+      <class name="TestNG0014ListenerClassesExecution.IInvokedMethodListenerExecution">
+        <test-method is-config="true" signature="launchTheBrowser()[pri:0, instance:TestNG0014ListenerClassesExecution.IInvokedMethodListenerExecution@302f7971]" started-at="2022-08-22T14:42:12Z" name="launchTheBrowser" finished-at="2022-08-22T14:42:19Z" duration-ms="7277" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method signature="printListOfData()[pri:0, instance:TestNG0010DataFromNativeExcelFile.PrintListOfData@3aee3976]" started-at="2022-08-21T14:46:47Z" name="printListOfData" finished-at="2022-08-21T14:46:48Z" duration-ms="1060" status="PASS">
+        </test-method> <!-- launchTheBrowser -->
+        <test-method is-config="true" signature="waitBeforeTest()[pri:0, instance:TestNG0014ListenerClassesExecution.IInvokedMethodListenerExecution@302f7971]" started-at="2022-08-22T14:42:19Z" name="waitBeforeTest" finished-at="2022-08-22T14:42:21Z" duration-ms="2016" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- printListOfData -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:TestNG0010DataFromNativeExcelFile.PrintListOfData@3aee3976]" started-at="2022-08-21T14:46:48Z" name="quitDriver" finished-at="2022-08-21T14:46:48Z" duration-ms="870" status="PASS">
+        </test-method> <!-- waitBeforeTest -->
+        <test-method signature="enterEmail()[pri:0, instance:TestNG0014ListenerClassesExecution.IInvokedMethodListenerExecution@302f7971]" started-at="2022-08-22T14:42:21Z" name="enterEmail" finished-at="2022-08-22T14:42:23Z" duration-ms="2371" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterEmail -->
+        <test-method is-config="true" signature="waitAfterTest()[pri:0, instance:TestNG0014ListenerClassesExecution.IInvokedMethodListenerExecution@302f7971]" started-at="2022-08-22T14:42:23Z" name="waitAfterTest" finished-at="2022-08-22T14:42:25Z" duration-ms="2006" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- waitAfterTest -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:TestNG0014ListenerClassesExecution.IInvokedMethodListenerExecution@302f7971]" started-at="2022-08-22T14:42:25Z" name="quitDriver" finished-at="2022-08-22T14:42:26Z" duration-ms="741" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
-      </class> <!-- TestNG0010DataFromNativeExcelFile.PrintListOfData -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- TestNG0014ListenerClassesExecution.IInvokedMethodListenerExecution -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

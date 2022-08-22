@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNG0010DataFromNativeExcelFile.PrintListOfData">
+      <class name="TestNG0014ListenerClassesExecution.ITestListenerExecution">
         <methods>
-          <include name="printListOfData"/>
-          <include name="launchBrowser"/>
+          <include name="quitDriver"/>
+          <include name="loginForm"/>
+          <include name="launchTheBrowser"/>
         </methods>
-      </class> <!-- TestNG0010DataFromNativeExcelFile.PrintListOfData -->
+      </class> <!-- TestNG0014ListenerClassesExecution.ITestListenerExecution -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
