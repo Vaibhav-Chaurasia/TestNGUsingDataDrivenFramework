@@ -1,8 +1,10 @@
-/TestNG0010DataFromNativeExcelFile/
+/TestNG0006AnnotationImplementation/
+/TestNG0007AnnotationHierarchy/
+/TestNG0008AnnotationAttributes/
 /TestNG0009DataFromSpreadsheet/
-/TestNG0012TestNGOperations/
-/TestNG0003ComponentsOfTestNG/
+/TestNG0010DataFromNativeExcelFile/
+/TestNG0011WebDriverManager/
 /TestNG0012TestNGXMLOperations/
-/TestNG0013Listeners/
 /TestNG0013ListenerClasses/
 /TestNG0014ListenerClassesExecution/
+/TestNG0015Log4j/

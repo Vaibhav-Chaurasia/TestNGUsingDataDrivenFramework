@@ -1,9 +1,9 @@
-package TestNG0008AnnotationAttributes;
+package TestNG0013ListenerClasses;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
-public class Retry implements IRetryAnalyzer{
+public class RetryIRetryAnalyzer implements IRetryAnalyzer{
 
 	private int count = 0;
 	private static int maxTry = 2;

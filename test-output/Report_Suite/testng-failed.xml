@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Report_Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="TestNG0013ListenerClasses.ListenerIReporterListener"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="TestNG0014ListenerClassesExecution.IReporterExecution">
+        <methods>
+          <include name="launchTheBrowser"/>
+          <include name="quitDriver"/>
+          <include name="waitAfterTest"/>
+          <include name="clickLoginButton"/>
+          <include name="waitBeforeTest"/>
+        </methods>
+      </class> <!-- TestNG0014ListenerClassesExecution.IReporterExecution -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Report_Suite] -->

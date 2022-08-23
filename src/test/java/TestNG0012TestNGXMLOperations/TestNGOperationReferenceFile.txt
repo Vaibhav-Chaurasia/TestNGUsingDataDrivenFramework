@@ -23,4 +23,8 @@ Listeners
 2. IAnnotationListener - IAnnotationTransformer.xml
 3. IExecutionListener - IExecutionListener.xml
 4. IHookableListener - IHookableListener.xml
-5. IInvokedMethodListener - IInvokedMethodListener.xml 
+5. IInvokedMethodListener - IInvokedMethodListener.xml
+6. IMethodInterceptor - IMethodInterceptor.xml
+7. IReporter - IReporter.xml
+8. ISuiteListener - ISuiteListener.xml
+9. IConfigurationListener - IConfigurationListener.xml

@@ -30,7 +30,7 @@ public class RetryAnalyzer {
 	public WebDriver driver;
 	public static String getCurrentURL;
 	
-	@Test(priority = 1, retryAnalyzer = Retry.class)
+	@Test(priority = 1, retryAnalyzer = TestNG0013ListenerClasses.RetryIRetryAnalyzer.class)
 	public void negativeScenario() throws InterruptedException {
 		//Negative Scenario
 		WebDriverManager.chromedriver().setup();
@@ -46,7 +46,7 @@ public class RetryAnalyzer {
 		driver.quit();
 	}
 	
-	@Test(priority = 2, retryAnalyzer = Retry.class)
+	@Test(priority = 2, retryAnalyzer = TestNG0013ListenerClasses.RetryIRetryAnalyzer.class)
 	public void positiveScenario() {
 		//Postive Scenario
 		WebDriverManager.chromedriver().setup();

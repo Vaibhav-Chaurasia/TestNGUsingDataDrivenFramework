@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="EmailPassword(failed)">
-    <groups>
-      <run>
-        <include name="A"/>
-        <include name="B"/>
-      </run>
-    </groups>
+  <listeners>
+    <listener class-name="TestNG0013ListenerClasses.ListenerIReporterListener"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="TestNG0012TestNGXMLOperations.ParameterizationUsingDataProviderUsingITextContext">
+      <class name="TestNG0014ListenerClassesExecution.IReporterExecution">
         <methods>
-          <include name="loginFormGroupB"/>
+          <include name="launchTheBrowser"/>
+          <include name="quitDriver"/>
+          <include name="waitAfterTest"/>
+          <include name="clickLoginButton"/>
+          <include name="waitBeforeTest"/>
         </methods>
-      </class> <!-- TestNG0012TestNGXMLOperations.ParameterizationUsingDataProviderUsingITextContext -->
+      </class> <!-- TestNG0014ListenerClassesExecution.IReporterExecution -->
     </classes>
-  </test> <!-- EmailPassword(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

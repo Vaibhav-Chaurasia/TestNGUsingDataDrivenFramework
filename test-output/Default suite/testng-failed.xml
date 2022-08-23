@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNG0014ListenerClassesExecution.ITestListenerExecution">
+      <class name="TestNG0015Log4j.ImplementingLoggerInJavaFile">
         <methods>
           <include name="quitDriver"/>
-          <include name="loginForm"/>
+          <include name="waitBeforeTest"/>
+          <include name="waitAfterTest"/>
           <include name="launchTheBrowser"/>
+          <include name="clickLoginButton"/>
         </methods>
-      </class> <!-- TestNG0014ListenerClassesExecution.ITestListenerExecution -->
+      </class> <!-- TestNG0015Log4j.ImplementingLoggerInJavaFile -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

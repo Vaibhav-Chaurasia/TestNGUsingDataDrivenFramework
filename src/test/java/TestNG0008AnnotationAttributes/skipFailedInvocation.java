@@ -16,7 +16,7 @@ public class skipFailedInvocation {
 	public WebDriver driver;
 	public static String getCurrentURL;
 	
-	@Test(priority = 1, retryAnalyzer = Retry.class, skipFailedInvocations = true)
+	@Test(priority = 1, retryAnalyzer = TestNG0013ListenerClasses.RetryIRetryAnalyzer.class, skipFailedInvocations = true)
 	public void negativeScenario() throws InterruptedException {
 		//Negative Scenario
 		WebDriverManager.chromedriver().setup();
@@ -32,7 +32,7 @@ public class skipFailedInvocation {
 		driver.quit();
 	}
 	
-	@Test(priority = 2, retryAnalyzer = Retry.class)
+	@Test(priority = 2, retryAnalyzer = TestNG0013ListenerClasses.RetryIRetryAnalyzer.class)
 	public void positiveScenario() {
 		//Postive Scenario
 		WebDriverManager.chromedriver().setup();
