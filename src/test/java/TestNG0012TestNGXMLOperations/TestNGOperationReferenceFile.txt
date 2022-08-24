@@ -28,3 +28,11 @@ Listeners
 7. IReporter - IReporter.xml
 8. ISuiteListener - ISuiteListener.xml
 9. IConfigurationListener - IConfigurationListener.xml
+
+
+Log4j
+Log4j - Log4jImplementation.xml
+
+
+TestNG Reports
+testngReports.xml

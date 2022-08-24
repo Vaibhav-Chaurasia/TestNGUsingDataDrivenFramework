@@ -1,0 +1,130 @@
+Configure Maven Report
+1. Write your appropriate code under @Test Annotation in maven project.
+2. Go to pom.xml file and add <build> tag after </dependencies> tag and it should be before </project> tag
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.2</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.1</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>
+							
+							${project.basedir}\testngReports.xml
+							
+						</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
+
+
+3. Add <properties> tag before <dependencies>
+<properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<maven.compiler.source>11</maven.compiler.source>
+	<maven.compiler.target>11</maven.compiler.target>
+</properties>
+	
+	<dependencies>
+
+Note - In this you have to mention your compiler version of Java which is installed in your system.
+
+
+4. Replace the name of testngReports.xml with your testng file name which you want to run.
+5. Also, you can configure on the suite level. The steps are as follows - ${suiteXmlFile}
+	a. Go to pom.xml file.
+	b. Right click on pom.xml -> Go Run As -> Run Configuration
+	c. In "Goals" enter - clean test -Dsurefire.suiteXmlFiles=Testngfile1.xml, testngfile2.xml (Give your testng.xml file names)
+	d. Inside pom.xml replace ${project.basedir}\testngReports.xml from 
+6. Other steps, in case you are not able to find maven configuration -
+Go to Run Configuration -> Choose Maven from left menu -> Double click on Maven -> Create new configuration -> Select working directory -> Add goals "clean test -Dsurefire.suiteXmlFiles=Testngfile1.xml, testngfile2.xml".
+
+
+Complete code looks like -
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>TestNGUsingDataDrivenFramework</groupId>
+	<artifactId>TestNGUsingDataDrivenFramework</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.14.3</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.2</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.1</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>
+							<!--In case Single testng file - ${project.basedir}\testng.xml -->
+							${project.basedir}\testngReports.xml
+							<!--In case of multiple testng files - Go to Run Configuration -> 
+								Maven -> Create new configuration -> Select working directory -> Add goals 
+								"clean test -Dsurefire.suiteXmlFiles=Testngfile1.xml, testngfile2.xml" -->
+							<!-- ${suiteXmlFile} -->
+						</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
+
+
+
+
+Generate Report from Maven
+1. One time process
+Right click on project -> Go to Maven -> Choose Update Project -> Select all checkboxes -> Click on OK button.
+
+2. Now, Go to Run As -> Click on maven clean
+3. Go to Run As -> Maven Build (Alt+Shift+X, M)
+4. In Goals, enter -> clean test -> Run the project.
+5. For test result -> Refresh the project -> Go to Target folder and open index.html

@@ -1,0 +1,19 @@
+To extract TestNG Report via Class
+1. Write the appropriate code with @Test Annotation
+2. Run the code
+3. Refresh the project
+4. Go to test-output folder
+5. Open Index.html file to view the report.
+6. You can also open emailable.html for different view
+7. test-output also contains some folders, so, for different types of report you can expand folders and open index.html.
+
+
+
+To extract TestNG Report via testng.xml file
+1. Write the appropriate code with @Test Annotation -> Convert your project into TestNG project and create testng.xml file
+2. Run the code from testng.xml file.
+3. Refresh the project
+4. Go to test-output folder
+5. Open Index.html file to view the report.
+6. You can also open emailable.html for different view
+7. test-output also contains some folders, so, for different types of report you can expand folders and open index.html.

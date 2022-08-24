@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNG0015Log4j.ImplementingLoggerInJavaFile">
+      <class name="TestNG0017ExtentReport.ExtentReportGeneration">
         <methods>
-          <include name="quitDriver"/>
-          <include name="waitBeforeTest"/>
-          <include name="waitAfterTest"/>
-          <include name="launchTheBrowser"/>
-          <include name="clickLoginButton"/>
+          <include name="startReport"/>
+          <include name="tearDown"/>
+          <include name="test_2"/>
+          <include name="test_3"/>
+          <include name="getResult"/>
         </methods>
-      </class> <!-- TestNG0015Log4j.ImplementingLoggerInJavaFile -->
+      </class> <!-- TestNG0017ExtentReport.ExtentReportGeneration -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
