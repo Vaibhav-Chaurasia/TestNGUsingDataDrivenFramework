@@ -28,9 +28,15 @@ public class IExecutionListenerExecution {
 		driver.get(baseUrl);
 	}
 	
-	@Test
+	@Test (priority = 1)
 	public void enterEmail() throws InterruptedException {
 		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("vaicha.oracle@gmail.com");
+		Thread.sleep(2000);
+	}
+	
+	@Test (priority = 2)
+	public void enterPassword() throws InterruptedException {
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Test@1234");
 		Thread.sleep(2000);
 	}
 	

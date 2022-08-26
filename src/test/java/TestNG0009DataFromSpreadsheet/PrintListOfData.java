@@ -34,7 +34,7 @@ public class PrintListOfData {
 		Thread.sleep(2000);
 
 		try {
-			values = SpreadsheetReader.readCompleteSpreadSheet("Scenario");
+			values = readSpreadSheet.readCompleteSpreadSheet("Scenario");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

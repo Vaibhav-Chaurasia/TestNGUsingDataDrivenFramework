@@ -107,7 +107,7 @@ public class SpreadsheetReader {
 	 * @return
 	 * @throws Exception
 	 */
-	public static List<List<Object>> readCompleteSpreadSheet(String sheetName) throws Exception
+	public List<List<Object>> readCompleteSpreadSheet(String sheetName) throws Exception
 	{
 		// Build a new authorized API client service.
 		Sheets service = getSheetsService();

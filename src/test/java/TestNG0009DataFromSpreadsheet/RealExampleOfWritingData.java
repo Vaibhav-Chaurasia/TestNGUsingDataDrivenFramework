@@ -33,7 +33,7 @@ public WebDriver driver;
 		driver.manage().window().maximize();
 
 		try {
-			values = SpreadsheetReader.readCompleteSpreadSheet("Scenario");
+			values = readSpreadSheet.readCompleteSpreadSheet("Scenario");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

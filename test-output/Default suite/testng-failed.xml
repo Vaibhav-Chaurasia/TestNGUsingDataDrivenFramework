@@ -3,15 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNG0017ExtentReport.ExtentReportGeneration">
+      <class name="TestNG0018FrameworkIntegration.TestCaseSignUp">
         <methods>
-          <include name="startReport"/>
+          <include name="teardown"/>
           <include name="tearDown"/>
-          <include name="test_2"/>
-          <include name="test_3"/>
+          <include name="testBaseSetup"/>
+          <include name="enterIncorrectFormat"/>
+          <include name="quitDriver"/>
           <include name="getResult"/>
+          <include name="setUp"/>
+          <include name="startReport"/>
         </methods>
-      </class> <!-- TestNG0017ExtentReport.ExtentReportGeneration -->
+      </class> <!-- TestNG0018FrameworkIntegration.TestCaseSignUp -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

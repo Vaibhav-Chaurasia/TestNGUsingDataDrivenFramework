@@ -23,7 +23,7 @@ public class FetchDataFromSpreadSheet {
 	public void readData() throws Exception {
 		
 		//We need to give the SheetName to fetch values
-		values = SpreadsheetReader.readCompleteSpreadSheet("Scenario");
+		values = readSpreadSheet.readCompleteSpreadSheet("Scenario");
 		
 		//Printing value having index 2nd row and 1st column. Always index starts from 0.
 		System.out.println(values.get(2).get(1).toString());
