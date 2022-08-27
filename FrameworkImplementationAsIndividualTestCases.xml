@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="LoginTestCaseRequiredFieldValidation">
+		<classes>
+			<class name="TestNG0018FrameworkIntegration.TestCaseLogin">
+				<methods>
+					<include name="requiredFieldValidation"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5" name="LoginTestCaseIncorrectFormat">
+		<classes>
+			<class name="TestNG0018FrameworkIntegration.TestCaseLogin">
+				<methods>
+					<include name="enterIncorrectFormat"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5" name="RegistrationTestCasesBlankValidation">
+		<classes>
+			<class name="TestNG0018FrameworkIntegration.TestCaseSignUp">
+				<methods>
+					<include name="verifyValidationMessageOnBlankFields"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test thread-count="5"
+		name="RegistrationTestCasesIAgreeValidationMessage">
+		<classes>
+			<class name="TestNG0018FrameworkIntegration.TestCaseSignUp">
+				<methods>
+					<include name="isIAgreeValidationMessageDisplayed"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

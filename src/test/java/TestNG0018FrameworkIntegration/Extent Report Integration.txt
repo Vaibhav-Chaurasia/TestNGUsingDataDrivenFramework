@@ -188,5 +188,6 @@ Integration of Extent Report
 4. Add Logs.java file given in TestNG0015Log4j -> ListenerITestListenerWithLog4j folder
 5. Add SystemInfo.java file given in src/main/java -> Utils folder
 6. Go to Base class and edit some information in startReport() method i.e. Name, Path of Files etc.
+7. Add extent-config.xml file in the root folder given in root folder.
 
-7. Now, create the test cases and run them and see the result.
+8. Now, create the test cases and run them and see the result.

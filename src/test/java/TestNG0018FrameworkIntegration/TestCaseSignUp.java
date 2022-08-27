@@ -23,7 +23,7 @@ public class TestCaseSignUp extends BaseClass{
 		
 		loginScreen.clickSignUpLink();
 
-		//Enter Email, password and click on login button.
+		//Click signup button
 		resistrationScreen.clickSignUpButton();
 		
 		boolean isIAgreeCheckBoxValidationMessageDisplayed = resistrationScreen.isCheckboxValidationMessageDisplayed();
@@ -36,9 +36,13 @@ public class TestCaseSignUp extends BaseClass{
 	}
 
 	@Test (priority = 2)
-	public void enterIncorrectFormat() {
+	public void isIAgreeValidationMessageDisplayed() {
 		softAssertion = new SoftAssert();
 
+		//When you run this from "FrameworkImplementationAsWhole.xml" comment "loginScreen.clickSignUpLink();"
+		//When you run this from "FrameworkImplementationAsIndividualTestCases.xml" uncomment "loginScreen.clickSignUpLink();"
+		loginScreen.clickSignUpLink();
+		
 		resistrationScreen.clickCheckBox();
 
 		boolean isIAgreeCheckBoxValidationMessageDisplayed = resistrationScreen.isCheckboxValidationMessageDisplayed();

@@ -19,5 +19,6 @@ public class RunFirstProgramFromTestNG {
 		driver.get("https://accounts.lambdatest.com/register");
 		driver.manage().window().maximize();
 		Thread.sleep(2000);
+		driver.quit();
 	}
 }

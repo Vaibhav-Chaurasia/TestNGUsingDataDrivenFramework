@@ -17,6 +17,7 @@ Operations Reference in TestNG.xml file
 8. Parameterization using data provider ITestContext to run different groups - DataProviderUsingITestContext.xml, ParameterizationUsingDataProviderUsingITextContext.java
 
 
+Running Program using Annotation Group - GroupExecution.xml
 
 Listeners
 1. ITestListener - ITestListener.xml
@@ -36,3 +37,14 @@ Log4j - Log4jImplementation.xml
 
 TestNG Reports
 testngReports.xml
+
+
+Framework
+In case anyone wants to run a complete class - FrameworkImplementationAsWhole.xml
+In case anyone wants to run each method individually i.e. Quit browser after each test case(method) - FrameworkImplementationAsIndividualTestCases.xml
+
+
+Parallel testing
+1. Parallel testing at class level (Single browser) - ParallelTestingAtClassLevel.xml
+2. Parallel testing at suite level (Single browser) - ParallelTestingAtSuiteLevel.xml
+3. Parallel testing at class level (Different browser) - ParallelTestingAtClassLevelWithDifferentBrowser.xml

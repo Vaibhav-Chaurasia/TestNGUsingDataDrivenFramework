@@ -1,36 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="LoginTestCases(failed)">
+<suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="BrowserName" value="FIREFOX"/>
+  <test thread-count="2" parallel="tests" name="Login(failed)">
     <classes>
-      <class name="TestNG0018FrameworkIntegration.TestCaseLogin">
+      <class name="TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin">
         <methods>
-          <include name="teardown"/>
-          <include name="tearDown"/>
+          <include name="enterIncorrectFormat"/>
           <include name="testBaseSetup"/>
           <include name="setUp"/>
-          <include name="quitDriver"/>
           <include name="getResult"/>
-          <include name="enterIncorrectFormat"/>
+          <include name="quitDriver"/>
           <include name="startReport"/>
-        </methods>
-      </class> <!-- TestNG0018FrameworkIntegration.TestCaseLogin -->
-    </classes>
-  </test> <!-- LoginTestCases(failed) -->
-  <test thread-count="5" name="RegistrationTestCases(failed)">
-    <classes>
-      <class name="TestNG0018FrameworkIntegration.TestCaseSignUp">
-        <methods>
           <include name="teardown"/>
           <include name="tearDown"/>
-          <include name="testBaseSetup"/>
-          <include name="enterIncorrectFormat"/>
-          <include name="quitDriver"/>
-          <include name="getResult"/>
-          <include name="setUp"/>
-          <include name="startReport"/>
         </methods>
-      </class> <!-- TestNG0018FrameworkIntegration.TestCaseSignUp -->
+      </class> <!-- TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin -->
     </classes>
-  </test> <!-- RegistrationTestCases(failed) -->
+  </test> <!-- Login(failed) -->
 </suite> <!-- Failed suite [Suite] -->
