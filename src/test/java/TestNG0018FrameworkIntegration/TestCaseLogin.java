@@ -9,6 +9,8 @@ import org.testng.asserts.SoftAssert;
 import Utils.SpreadsheetReader;
 
 public class TestCaseLogin extends BaseClass{
+	
+	//To Run this test case you can use FrameworkImplementationAsIndividualTestCases.xml or FrameworkImplementationAsWhole.xml
 
 	protected ScreenLoginScreen loginScreen;
 	SoftAssert softAssertion;

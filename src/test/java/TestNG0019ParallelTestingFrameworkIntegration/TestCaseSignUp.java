@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class TestCaseSignUp extends BaseClass{
+	
+	//To run this you can use ParallelTestingAtClassLevel.xml or ParallelTestingAtSuiteLevel.xml or ParallelTestingAtClassLevelWithDifferentBrowser.xml
 
 	protected ScreenRegistrationScreen resistrationScreen;
 	protected ScreenLoginScreen loginScreen;

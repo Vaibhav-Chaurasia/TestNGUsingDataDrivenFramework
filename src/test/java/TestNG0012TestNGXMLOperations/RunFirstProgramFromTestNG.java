@@ -8,8 +8,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class RunFirstProgramFromTestNG {
 
-	//To Run this program go to TestNG File i.e. firstprogram.xml
-
+	//To Run this program go to TestNG File i.e. firstprogram.xml or runMultipleClasses.xml or runMultipleClassesInAnotherStyle.xml
 	public WebDriver driver;
 
 	@Test

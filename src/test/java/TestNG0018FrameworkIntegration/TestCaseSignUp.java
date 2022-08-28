@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class TestCaseSignUp extends BaseClass{
+	
+	//To Run this test case you can use FrameworkImplementationAsIndividualTestCases.xml or FrameworkImplementationAsWhole.xml
 
 	protected ScreenRegistrationScreen resistrationScreen;
 	protected ScreenLoginScreen loginScreen;

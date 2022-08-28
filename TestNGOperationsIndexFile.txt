@@ -1,5 +1,15 @@
-Operations Reference in TestNG.xml file
+This file contains the testNG xml files from which different classes are running.
 
+To reach out to the classes, follow the following steps
+a. Open any xml file
+b. Go to test level -> Find "<class name="...." tag
+c. Now, for e.g. under <class tag you will find "TestNG0014ListenerClassesExecution.IInvokedMethodListenerExecution". So,
+	TestNG0014ListenerClassesExecution - It denotes the package name
+	IInvokedMethodListenerExecution - It denotes the class name
+8. Using this reference you can reach out to the class.
+
+
+Index
 1. Run single class - firstprogram.xml
 2. Run multiple class - runMultipleClasses.xml
 3. Run multiple class in different style - runMultipleClassesInAnotherStyle.xml

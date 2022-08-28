@@ -18,6 +18,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 @Listeners(TestNG0015Log4j.ListenerITestListenerWithLog4j.class)
 
 public class ImplementingLoggerInJavaFile {
+	
+	//To Run this file you can also use Log4jImplementation.xml file
 
 	public WebDriver driver;
 

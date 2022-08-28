@@ -9,6 +9,8 @@ import org.testng.asserts.SoftAssert;
 import Utils.SpreadsheetReader;
 
 public class TestCaseLogin extends BaseClass{
+	
+	//To run this you can use ParallelTestingAtClassLevel.xml or ParallelTestingAtSuiteLevel.xml or ParallelTestingAtClassLevelWithDifferentBrowser.xml
 
 	protected ScreenLoginScreen loginScreen;
 	SoftAssert softAssertion;

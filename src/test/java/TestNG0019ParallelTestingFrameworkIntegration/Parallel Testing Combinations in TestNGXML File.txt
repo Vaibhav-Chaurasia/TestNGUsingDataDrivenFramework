@@ -1,0 +1,76 @@
+Parallel testing can be achievable by simple methods without using selenium grid via TestNG.xml file.
+
+For Same Browser
+1. ParallelTestingAtClassLevel - ParallelTestingAtClassLevel.xml
+2. ParallelTestingAtSuiteLevel - ParallelTestingAtSuiteLevel.xml
+
+
+For Different Browser
+1. ParallelTestingAtClassLevelWithDifferentBrowser - ParallelTestingAtClassLevelWithDifferentBrowser.xml
+
+2. ParallelTestingAtSuiteLevelWithDifferentBrowser
+It is not achievable because 
+	- While passing the same parameters for different browser will not work and 
+	- Two suites in one xml file is not possible
+both above conditions are against the rule of xml file parsing. So, to achieve that, we can follow some different process -
+a. Create Two different testng.xml files for different browsers.
+b. Pass respective browser name in respective testng.xml files.
+
+For e.g.
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<parameter name="BrowserName" value="FIREFOX"></parameter>
+
+	<test name="ParallelTestingInFireFox" parallel = "classes" thread-count="2">
+		<classes>
+			<class name="TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin"/>
+			<class name="TestNG0012TestNGXMLOperations.RunFirstProgramFromTestNG"/>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="ParallelTestingInChrome" parallel = "classes" thread-count="2">
+		<classes>
+			<class name="TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin"/>
+			<class name="TestNG0012TestNGXMLOperations.RunFirstProgramFromTestNG"/>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
+c. Now configure code in pom.xml file
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.2</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.1</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>
+							${suiteXmlFile}
+						</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+d. To run multiple testNG file via pom.xml follow the following steps
+	- Right click in POM.xml file -> Go to Run As -> Run Configuration -> From left menu find Maven Build -> Right Click on Maven Build -> Select New Configuration 	- Go to Base Directory Field -> Click on Working Space -> Select your project 
+	- Now Go to Goals field -> Add your goals given below 
+		clean test -Dsurefire.suiteXmlFiles=Testngfile1.xml, testngfile2.xml
+	replace testngfile1.xml and testngfile2.xml with your files and finally run the file.
