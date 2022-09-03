@@ -7,19 +7,19 @@ import org.testng.asserts.SoftAssert;
 
 public class TestCaseSignUp extends BaseClass{
 	
-	//To run this you can use ParallelTestingAtClassLevel.xml or ParallelTestingAtSuiteLevel.xml or ParallelTestingAtClassLevelWithDifferentBrowser.xml
+	//To run this you can use ParallelTestingAtClassLevelWithDifferentBrowser.xml
 
 	protected ScreenRegistrationScreen resistrationScreen;
 	protected ScreenLoginScreen loginScreen;
 	SoftAssert softAssertion;
 	
 	@BeforeTest
-	public void setUp() {
+	public void setUpRegistration() {
 		resistrationScreen = new ScreenRegistrationScreen(driver);
 		loginScreen = new ScreenLoginScreen(driver);
 	}
 
-	@Test (priority = 1)
+	@Test (priority = 3)
 	public void verifyValidationMessageOnBlankFields(){
 		softAssertion = new SoftAssert();
 		
@@ -37,7 +37,7 @@ public class TestCaseSignUp extends BaseClass{
 		softAssertion.assertAll();
 	}
 
-	@Test (priority = 2)
+	@Test (priority = 4)
 	public void isIAgreeValidationMessageDisplayed() {
 		softAssertion = new SoftAssert();
 

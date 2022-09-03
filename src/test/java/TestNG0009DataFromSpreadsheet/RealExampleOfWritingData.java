@@ -73,8 +73,6 @@ public WebDriver driver;
 		readSpreadSheet.writeSheet(writeValue, "Scenario1");
 	}
 	
-	
-
 	@AfterTest
 	public void quitDriver() {
 		driver.quit();

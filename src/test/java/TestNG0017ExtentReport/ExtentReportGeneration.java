@@ -10,11 +10,11 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ExtentReportGeneration {
-	ExtentHtmlReporter htmlReporter;
+	ExtentSparkReporter htmlReporter;
 	ExtentReports extent;
 	
 	//helps to generate the logs in the test report.
@@ -23,7 +23,7 @@ public class ExtentReportGeneration {
 	@BeforeTest
 	public void startReport() {
 		// initialize the HtmlReporter
-		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") +"/ExtentReport/SparkReport.html");
+		htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir") +"/ExtentReport/SparkReport.html");
 
 		//initialize ExtentReports and attach the HtmlReporter
 		extent = new ExtentReports();

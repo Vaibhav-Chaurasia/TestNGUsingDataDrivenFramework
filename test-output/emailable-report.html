@@ -9,21 +9,240 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Suite</th></tr>
-<tr><td><a href="#t0">FirstProgram</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">12,530</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">Login</a></td><td class="num">1</td><td class="num">0</td><td class="num attn">1</td><td class="num">34,840</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">2</th><th class="num">0</th><th class="num attn">1</th><th class="num">47,370</th><th colspan="2"></th></tr>
+<tr><td><a href="#t0">ParallelTestingInChromeSignUp</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">53,454</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">ParallelTestingInFireFoxLogin</a></td><td class="num">0</td><td class="num attn">1</td><td class="num attn">1</td><td class="num">56,752</td><td></td><td></td></tr>
+<tr><td><a href="#t2">ParallelTestingInFireFoxSignUp</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">86,254</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t3">ParallelTestingInChromeLogin</a></td><td class="num">0</td><td class="num attn">1</td><td class="num attn">1</td><td class="num">83,036</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">0</th><th class="num attn">2</th><th class="num attn">6</th><th class="num">279,496</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">FirstProgram &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">TestNG0012TestNGXMLOperations.RunFirstProgramFromTestNG</td><td><a href="#m0">launchBrowser</a></td><td rowspan="1">1661608901789</td><td rowspan="1">12492</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">Login &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin</td><td><a href="#m1">enterIncorrectFormat</a></td><td rowspan="1">1661608928271</td><td rowspan="1">6440</td></tr><tr><th colspan="4">Login &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin</td><td><a href="#m2">requiredFieldValidation</a></td><td rowspan="1">1661608921700</td><td rowspan="1">6551</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">ParallelTestingInChromeSignUp &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin</td><td><a href="#m0">enterIncorrectFormat</a></td><td rowspan="1">1662196484953</td><td rowspan="1">6770</td></tr><tr class="failedeven"><td><a href="#m1">requiredFieldValidation</a></td><td rowspan="1">1662196451241</td><td rowspan="1">6485</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">ParallelTestingInFireFoxLogin &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin</td><td><a href="#m2">getResult</a></td><td rowspan="1">1662196497527</td><td rowspan="1">2</td></tr><tr><th colspan="4">ParallelTestingInFireFoxLogin &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin</td><td><a href="#m3">requiredFieldValidation</a></td><td rowspan="1">1662196486632</td><td rowspan="1">10890</td></tr><tr><th colspan="4">ParallelTestingInFireFoxLogin &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin</td><td><a href="#m4">enterIncorrectFormat</a></td><td rowspan="1">1662196497533</td><td rowspan="1">0</td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">ParallelTestingInFireFoxSignUp &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp</td><td><a href="#m5">isIAgreeValidationMessageDisplayed</a></td><td rowspan="1">1662196534480</td><td rowspan="1">43153</td></tr><tr class="failedeven"><td><a href="#m6">verifyValidationMessageOnBlankFields</a></td><td rowspan="1">1662196531797</td><td rowspan="1">2628</td></tr></tbody>
+<tbody id="t3"><tr><th colspan="4">ParallelTestingInChromeLogin &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp</td><td><a href="#m7">getResult</a></td><td rowspan="1">1662196580594</td><td rowspan="1">0</td></tr><tr><th colspan="4">ParallelTestingInChromeLogin &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp</td><td><a href="#m8">verifyValidationMessageOnBlankFields</a></td><td rowspan="1">1662196531916</td><td rowspan="1">48674</td></tr><tr><th colspan="4">ParallelTestingInChromeLogin &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp</td><td><a href="#m9">isIAgreeValidationMessageDisplayed</a></td><td rowspan="1">1662196580601</td><td rowspan="1">0</td></tr></tbody>
 </table>
-<h2>FirstProgram</h2><h3 id="m0">TestNG0012TestNGXMLOperations.RunFirstProgramFromTestNG#launchBrowser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Login</h2><h3 id="m1">TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin#enterIncorrectFormat</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [Invalid email addres] but found [Invalid email address]
-	at TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin.enterIncorrectFormat(TestCaseLogin.java:66)
+<h2>ParallelTestingInChromeSignUp</h2><h3 id="m0">TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin#enterIncorrectFormat</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [Invalid email addres] but found [Invalid email address]
+	at TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin.enterIncorrectFormat(TestCaseLogin.java:68)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 ... Removed 22 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin#requiredFieldValidation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin#requiredFieldValidation</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [Email is a required field] but found [Please enter your email]
+	at TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin.requiredFieldValidation(TestCaseLogin.java:48)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 22 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>ParallelTestingInFireFoxLogin</h2><h3 id="m2">TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin#getResult</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[TestResult name=requiredFieldValidation status=FAILURE method=TestCaseLogin.requiredFieldValidation()[pri:1, instance:TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin@73194df] output={null}]</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DML-09303&apos;, ip: &apos;192.168.0.103&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.13&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
+	at Utils.ElementUtils.getScreenShot(ElementUtils.java:516)
+	at TestNG0019ParallelTestingFrameworkIntegration.BaseClass.getResult(BaseClass.java:216)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin#requiredFieldValidation</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.WebDriverException: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:8846
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DML-09303&apos;, ip: &apos;192.168.0.103&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.13&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:92)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.toString(Unknown Source)
+	at java.base/java.lang.String.valueOf(String.java:2951)
+	at java.base/java.lang.StringBuilder.append(StringBuilder.java:168)
+	at Utils.ElementUtils.getText(ElementUtils.java:189)
+	at TestNG0019ParallelTestingFrameworkIntegration.ScreenLoginScreen.getValidationMessageForInvalidCredentials(ScreenLoginScreen.java:67)
+	at TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin.requiredFieldValidation(TestCaseLogin.java:41)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:8846
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
+	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
+	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
+	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
+	at okhttp3.RealCall.execute(RealCall.java:77)
+	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:155)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	... 33 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method)
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.base/java.net.Socket.connect(Socket.java:608)
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
+	... 53 more
+... Removed 16 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin#enterIncorrectFormat</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DML-09303&apos;, ip: &apos;192.168.0.103&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.13&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
+	at Utils.ElementUtils.getScreenShot(ElementUtils.java:516)
+	at TestNG0019ParallelTestingFrameworkIntegration.BaseClass.getResult(BaseClass.java:216)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>ParallelTestingInFireFoxSignUp</h2><h3 id="m5">TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp#isIAgreeValidationMessageDisplayed</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //a[contains(text(),&apos;Sign up&apos;)]&apos; (tried for 30 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at Utils.ElementUtils.clickON(ElementUtils.java:44)
+	at TestNG0019ParallelTestingFrameworkIntegration.ScreenLoginScreen.clickSignUpLink(ScreenLoginScreen.java:77)
+	at TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp.isIAgreeValidationMessageDisplayed(TestCaseSignUp.java:46)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: //a[contains(text(),&apos;Sign up&apos;)]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DML-09303&apos;, ip: &apos;192.168.0.103&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.13&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 98.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220313140707, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:processID: 5080, moz:profile: C:\Users\vchaurasia\AppData..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: ec06ab40-ed1e-46a3-85b9-aae082fd0641
+*** Element info: {Using=xpath, value=//a[contains(text(),&apos;Sign up&apos;)]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:670)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:666)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 23 more
+... Removed 20 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp#verifyValidationMessageOnBlankFields</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.StaleElementReferenceException: The element reference of &lt;a class=&quot;ml-12 text-size-12 text-black font-medium inline-block t_shadow-none underline  hover:underline hover:text-lambda-900&quot; href=&quot;/register&quot;&gt; is stale; either the element is no longer attached to the DOM, it is not in the current frame context, or the document has been refreshed
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DML-09303&apos;, ip: &apos;192.168.0.103&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.13&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 98.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220313140707, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:processID: 5080, moz:profile: C:\Users\vchaurasia\AppData..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: ec06ab40-ed1e-46a3-85b9-aae082fd0641
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy18.click(Unknown Source)
+	at Utils.ElementUtils.clickON(ElementUtils.java:45)
+	at TestNG0019ParallelTestingFrameworkIntegration.ScreenLoginScreen.clickSignUpLink(ScreenLoginScreen.java:77)
+	at TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp.verifyValidationMessageOnBlankFields(TestCaseSignUp.java:26)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>ParallelTestingInChromeLogin</h2><h3 id="m7">TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp#getResult</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[TestResult name=verifyValidationMessageOnBlankFields status=FAILURE method=TestCaseSignUp.verifyValidationMessageOnBlankFields()[pri:3, instance:TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp@42bc14c1] output={null}]</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DML-09303&apos;, ip: &apos;192.168.0.103&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.13&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
+	at Utils.ElementUtils.getScreenShot(ElementUtils.java:516)
+	at TestNG0019ParallelTestingFrameworkIntegration.BaseClass.getResult(BaseClass.java:216)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp#verifyValidationMessageOnBlankFields</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DML-09303&apos;, ip: &apos;192.168.0.103&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.13&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.toString(Unknown Source)
+	at java.base/java.lang.String.valueOf(String.java:2951)
+	at java.base/java.lang.StringBuilder.append(StringBuilder.java:168)
+	at Utils.ElementUtils.isElementDisplayed(ElementUtils.java:227)
+	at TestNG0019ParallelTestingFrameworkIntegration.ScreenRegistrationScreen.isCheckboxValidationMessageDisplayed(ScreenRegistrationScreen.java:41)
+	at TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp.verifyValidationMessageOnBlankFields(TestCaseSignUp.java:31)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 16 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp#isIAgreeValidationMessageDisplayed</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DML-09303&apos;, ip: &apos;192.168.0.103&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.13&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
+	at Utils.ElementUtils.getScreenShot(ElementUtils.java:516)
+	at TestNG0019ParallelTestingFrameworkIntegration.BaseClass.getResult(BaseClass.java:216)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

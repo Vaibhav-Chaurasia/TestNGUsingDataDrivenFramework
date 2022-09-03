@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" thread-count="2">
+	<test name="ParallelTestingInFireFoxLogin">
+		<parameter name="BrowserName" value="FIREFOX"></parameter>
+		<classes>
+			<class name="TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin"/>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="ParallelTestingInChromeSignUp">
+		<parameter name="BrowserName" value="CHROME"></parameter>
+		<classes>
+			<class name="TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin"/>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="ParallelTestingInFireFoxSignUp">
+		<parameter name="BrowserName" value="FIREFOX"></parameter>
+		<classes>
+			<class name="TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp"/>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="ParallelTestingInChromeLogin">
+		<parameter name="BrowserName" value="CHROME"></parameter>
+		<classes>
+			<class name="TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp"/>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

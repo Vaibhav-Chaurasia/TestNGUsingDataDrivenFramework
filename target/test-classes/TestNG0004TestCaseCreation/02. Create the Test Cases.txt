@@ -1,5 +1,0 @@
-1. Follow all the steps to create the maven project.
-2. Go to src/test/java folder
-3. Right click on src/test/java and create the package.
-4. Now, go to the package -> Right click on package -> Create a new class without main function.
-5. Start writing the test case.

@@ -1,15 +1,12 @@
 Parallel testing can be achievable by simple methods without using selenium grid via TestNG.xml file.
 
-For Same Browser
-1. ParallelTestingAtClassLevel - ParallelTestingAtClassLevel.xml
-2. ParallelTestingAtSuiteLevel - ParallelTestingAtSuiteLevel.xml
-
-
 For Different Browser
-1. ParallelTestingAtClassLevelWithDifferentBrowser - ParallelTestingAtClassLevelWithDifferentBrowser.xml
+1. ParallelTestingAtClassLevel - ParallelTestingAtClassLevelForDifferentBrowserWithoutParamaters.xml
+2. ParallelTestingAtSuiteLevel - ParallelTestingAtSuiteLevelWithDifferentBrowser.xml
 
-2. ParallelTestingAtSuiteLevelWithDifferentBrowser
-It is not achievable because 
+
+
+Parallel testing in some cases is not achievable because 
 	- While passing the same parameters for different browser will not work and 
 	- Two suites in one xml file is not possible
 both above conditions are against the rule of xml file parsing. So, to achieve that, we can follow some different process -
@@ -74,3 +71,76 @@ d. To run multiple testNG file via pom.xml follow the following steps
 	- Now Go to Goals field -> Add your goals given below 
 		clean test -Dsurefire.suiteXmlFiles=Testngfile1.xml, testngfile2.xml
 	replace testngfile1.xml and testngfile2.xml with your files and finally run the file.
+	
+	
+	
+Parallel Testing combinations
+1. Parallel testing at class level for same browser is not possible
+
+2. Parallel testing at class level for different browsers is possible
+ a. Only possible when test cases lie in different suites with different browsers. For e.g.
+ <test thread-count="2" name="Test" parallel = "classes">
+    <classes>
+      <class name="TestNG0018FrameworkIntegration.TestCaseLogin"/>
+      <class name="TestNG0012TestNGXMLOperations.RunFirstProgramFromTestNG"/>
+    </classes>
+  </test> <!-- Test -->
+	
+	
+	
+3. Parallel testing at suite level for same browser is possible
+a. It is possible, when no browser is defined but thread count is defined as 2 or more.
+<suite name="Suite" parallel="tests" thread-count="2">
+	<test name="FirstProgram">
+		<classes>
+			<class
+				name="TestNG0012TestNGXMLOperations.RunFirstProgramFromTestNG" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Login">
+		<classes>
+			<class
+				name="TestNG0018FrameworkIntegration.TestCaseLogin" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
+
+Parallel testing at suite level For different browser
+a. It is possible only in one scenario when parameter is defined in an individual class with thread count 2 or more.
+<suite name="Suite" parallel="tests" thread-count="2">
+	<test name="ParallelTestingInFireFoxLogin">
+		<parameter name="BrowserName" value="FIREFOX"></parameter>
+		<classes>
+			<class name="TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin"/>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="ParallelTestingInChromeSignUp">
+		<parameter name="BrowserName" value="CHROME"></parameter>
+		<classes>
+			<class name="TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin"/>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="ParallelTestingInFireFoxSignUp">
+		<parameter name="BrowserName" value="FIREFOX"></parameter>
+		<classes>
+			<class name="TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp"/>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="ParallelTestingInChromeLogin">
+		<parameter name="BrowserName" value="CHROME"></parameter>
+		<classes>
+			<class name="TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp"/>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
+
+Important Note - Parallel testing is not reliable as compare to sequential testing. As, frequently test cases will failed as it doesn't give an accurate results.
+It means rate of failure of test cases in parallel testing is very frequent.

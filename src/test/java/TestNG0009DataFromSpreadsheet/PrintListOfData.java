@@ -53,8 +53,6 @@ public class PrintListOfData {
 		//Writing data
 		List<Object> writeValue = new ArrayList<Object>();
 
-
-
 		for(int i = 2; i <= columnSize; i++) {
 			String actualXpath = beforeXpath1stColumn + i + afterXpath2ndColumn;
 			WebElement element = driver.findElement(By.xpath(actualXpath));

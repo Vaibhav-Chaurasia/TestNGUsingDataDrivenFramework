@@ -5,9 +5,11 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.mortbay.log.Log;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -21,7 +23,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import Utils.ElementUtils;
@@ -33,6 +35,15 @@ public class BaseClass {
 	public static WebDriver driver;
 	public static SpreadsheetReader readSpreadsheet = new SpreadsheetReader();
 	static List<List<Object>> values = null;
+
+	public static Capabilities capability;
+	public static String baseURL;
+
+	//Extent Report Declaration
+	protected static ExtentSparkReporter htmlReporter;
+	protected static ExtentReports extent;
+	protected static ExtentTest test;
+	public static String configFilePath = "\\src\\main\\resources\\ConfigFiles\\extent-config.xml";
 
 	public static Browser browser;
 
@@ -50,19 +61,21 @@ public class BaseClass {
 		System.out.println("Browser = " + browser);
 
 		values = readSpreadsheet.readCompleteSpreadSheet("LoginScreenData");
-		String baseURL = values.get(0).get(1).toString();
+		baseURL = values.get(0).get(1).toString();
 		System.out.println(baseURL);
 
 		switch (browser) {
 		case CHROME:
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
+			capability = ((RemoteWebDriver) driver).getCapabilities(); //Remote Web Driver to get Browser info
 			driver.get(baseURL);
 			break;
 
 		case FIREFOX:
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
+			capability = ((RemoteWebDriver) driver).getCapabilities(); //Remote Web Driver to get Browser info
 			driver.get(baseURL);
 			break;
 
@@ -70,7 +83,7 @@ public class BaseClass {
 			System.out.println("Browser Not On the List");
 			break;
 		}
-		
+
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
@@ -84,18 +97,19 @@ public class BaseClass {
 
 
 	/*---------------------------------------Start of Extent Report---------------------------------------------------*/
+
 	//This method helps to access the driver i.e. way to access the various elements and events like click, tap etc.
 	public static WebDriver getDriver() {
 		return driver;
 	}
 
 	//The ExtentHtmlReporter creates a rich standalone HTML file. It allows several configuration options via the config() method.
-	public ExtentHtmlReporter getHtmlReporter() {
+	public ExtentSparkReporter getHtmlReporter() {
 		return htmlReporter;
 	}
 
 	//This method helps to set the HTML reporter, so that HTML reporter components will be accessible.
-	public void setHtmlReporter(ExtentHtmlReporter htmlReporter) {
+	public void setHtmlReporter(ExtentSparkReporter htmlReporter) {
 		BaseClass.htmlReporter = htmlReporter;
 	}
 
@@ -114,9 +128,7 @@ public class BaseClass {
 		BaseClass.test = test;
 	}
 
-	protected static ExtentHtmlReporter htmlReporter;
-	protected static ExtentReports extent;
-	protected static ExtentTest test;
+
 
 	/*This function is executed before the printing of HTML Report. Basically, it does the basic settings before report printing i.e.
 	 * Set the Path
@@ -128,14 +140,24 @@ public class BaseClass {
 	 */
 	@BeforeSuite(alwaysRun = true)
 	public void startReport() throws IOException {
+
+		/*
+		 * In case, you want to use extent-config.xml to set report configuration, then uncomment the following code -
+		 * htmlReporter.loadXMLConfig(System.getProperty("user.dir") + configFilePath);
+		 * 
+		 * And comment the following code -
+		 * htmlReporter.config().setDocumentTitle("Test Automation Report");
+		 * htmlReporter.config().setReportName("Test Report Automation <img style=\"width:15%;\" src='../src/main/resources/Images/DMILOGO.png' />");
+		 * */
+
 		//Delete the existing folder where report generated
 		ElementUtils.deleteDirectory("ExecutionTestNG");
 
 		// initialize the HtmlReporter
-		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/ExecutionTestNG/SparkReport.html");
+		htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "/ExecutionTestNG/SparkReport.html");
 
 		// Create an object of Extent Reports
-		htmlReporter.loadXMLConfig(System.getProperty("user.dir") + "/extent-config.xml");
+		//htmlReporter.loadXMLConfig(System.getProperty("user.dir") + configFilePath);
 
 		//initialize ExtentReports and attach the HtmlReporter
 		extent = new ExtentReports();
@@ -144,13 +166,12 @@ public class BaseClass {
 		//configuration items to change the look and feel
 		//add content, manage tests etc
 		extent.setSystemInfo("Host Name", Utils.SystemInfo.getHostName());
-		htmlReporter.config().setDocumentTitle("Simple Automation Report");
-		htmlReporter.config().setReportName("Test Report");
+		htmlReporter.config().setDocumentTitle("Test Automation Report");
+		htmlReporter.config().setReportName("Test Report Automation <img style=\"width:15%;\" src='../src/main/resources/Images/DMILOGO.png' />");
 		extent.setSystemInfo("User Name", "Vaibhav Chaurasia");
 		htmlReporter.config().setTheme(Theme.DARK);
 		htmlReporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
-		//extent.setSystemInfo("Environment", Environment.ReadExcelData("Test_Environment", 0, 0));
-		//extent.setSystemInfo("Test Browser", Environment.ReadExcelData("Browser", 1, 0));
+		extent.setSystemInfo("OS", Utils.SystemInfo.getOperatingSystem());
 	}
 
 
@@ -164,7 +185,7 @@ public class BaseClass {
 			try {
 				Log.info("Quiting Driver in @after Test Class TestBase.java");
 				Log.info("Extent Report has been flushed Successfully");
-				htmlReporter.stop();
+				extent.flush();
 			} catch (Exception e) {
 				Log.info("Unable to Quit Driver");
 				TestNG0015Log4j.ListenerITestListenerWithLog4j.Logs.error(e);
@@ -196,10 +217,14 @@ public class BaseClass {
 		}
 	}
 
-	
+
 	@AfterSuite
 	public void teardown() {
-		//to write or update test information to reporter
+		//To write or update test information to reporter
+		//This code is written in aftersuite. So, that it executes only once.
+		extent.setSystemInfo("Browser Name", capability.getBrowserName());
+		extent.setSystemInfo("Browser Version", capability.getVersion());
+		
 		extent.flush();
 	}
 	/*---------------------------------------End of Extent Report---------------------------------------------------*/

@@ -1,21 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="BrowserName" value="FIREFOX"/>
-  <test thread-count="2" parallel="tests" name="Login(failed)">
+  <test thread-count="2" parallel="tests" name="ParallelTestingInChromeSignUp(failed)">
+    <parameter name="BrowserName" value="CHROME"/>
     <classes>
       <class name="TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin">
         <methods>
           <include name="enterIncorrectFormat"/>
           <include name="testBaseSetup"/>
-          <include name="setUp"/>
           <include name="getResult"/>
           <include name="quitDriver"/>
           <include name="startReport"/>
+          <include name="setUpLogin"/>
           <include name="teardown"/>
+          <include name="requiredFieldValidation"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin -->
     </classes>
-  </test> <!-- Login(failed) -->
+  </test> <!-- ParallelTestingInChromeSignUp(failed) -->
+  <test thread-count="2" parallel="tests" name="ParallelTestingInFireFoxLogin(failed)">
+    <parameter name="BrowserName" value="FIREFOX"/>
+    <classes>
+      <class name="TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin">
+        <methods>
+          <include name="enterIncorrectFormat"/>
+          <include name="testBaseSetup"/>
+          <include name="getResult"/>
+          <include name="quitDriver"/>
+          <include name="startReport"/>
+          <include name="setUpLogin"/>
+          <include name="teardown"/>
+          <include name="requiredFieldValidation"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TestNG0019ParallelTestingFrameworkIntegration.TestCaseLogin -->
+    </classes>
+  </test> <!-- ParallelTestingInFireFoxLogin(failed) -->
+  <test thread-count="2" parallel="tests" name="ParallelTestingInFireFoxSignUp(failed)">
+    <parameter name="BrowserName" value="FIREFOX"/>
+    <classes>
+      <class name="TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp">
+        <methods>
+          <include name="testBaseSetup"/>
+          <include name="getResult"/>
+          <include name="setUpRegistration"/>
+          <include name="quitDriver"/>
+          <include name="startReport"/>
+          <include name="isIAgreeValidationMessageDisplayed"/>
+          <include name="teardown"/>
+          <include name="verifyValidationMessageOnBlankFields"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp -->
+    </classes>
+  </test> <!-- ParallelTestingInFireFoxSignUp(failed) -->
+  <test thread-count="2" parallel="tests" name="ParallelTestingInChromeLogin(failed)">
+    <parameter name="BrowserName" value="CHROME"/>
+    <classes>
+      <class name="TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp">
+        <methods>
+          <include name="testBaseSetup"/>
+          <include name="getResult"/>
+          <include name="setUpRegistration"/>
+          <include name="quitDriver"/>
+          <include name="startReport"/>
+          <include name="isIAgreeValidationMessageDisplayed"/>
+          <include name="teardown"/>
+          <include name="verifyValidationMessageOnBlankFields"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TestNG0019ParallelTestingFrameworkIntegration.TestCaseSignUp -->
+    </classes>
+  </test> <!-- ParallelTestingInChromeLogin(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -12,8 +12,6 @@ public class SpreadSheetOperations {
 	//Spreadsheet Rows and columns works as a List, so we need to declare values as List.
 	static List<List<Object>> values = null;
 
-
-
 	public static void main(String[] args) throws Exception {
 
 		List<Object> fruits = new ArrayList<Object>();
@@ -40,11 +38,12 @@ public class SpreadSheetOperations {
 		Thread.sleep(2000);
 
 		//Create New Sheet and Columns
-		readSpreadSheet.createSheetAndColumn("TestData1", fruits);
+		//readSpreadSheet.createSheetAndColumn("TestData1", fruits);
 		
 		Thread.sleep(2000);
 		
-		//Write data to the spreadsheet
+		//Write data to the spreadsheet and it works in existing sheets.
 		readSpreadSheet.writeSheet(people, "TestData" + "!B1");
+		readSpreadSheet.writeSheet(fruits, "TestData" + "!B2");
 	}
 }

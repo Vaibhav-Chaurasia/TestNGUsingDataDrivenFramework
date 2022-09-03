@@ -1,0 +1,7 @@
+PlayList
+Extent Reports - 5.0.5 - Latest
+Link - https://www.youtube.com/playlist?list=PL9ok7C7Yn9A-yUEnE62gOQ2B4pL3gsC28
+
+
+ExtentSparkReporter - send logs & test status to html report
+https://www.youtube.com/watch?v=9l1X7eVSCFY

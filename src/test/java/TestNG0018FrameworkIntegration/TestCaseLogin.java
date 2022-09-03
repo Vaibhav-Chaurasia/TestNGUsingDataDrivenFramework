@@ -19,14 +19,12 @@ public class TestCaseLogin extends BaseClass{
 	static List<List<Object>> values = null;
 
 	@BeforeTest
-	public void setUp() {
+	public void setUpLogin() {
 		loginScreen = new ScreenLoginScreen(driver);
-
 
 		try {
 			values = readSpreadsheet.readCompleteSpreadSheet("LoginScreenData");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

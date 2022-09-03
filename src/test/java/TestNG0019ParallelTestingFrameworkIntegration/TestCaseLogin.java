@@ -10,7 +10,7 @@ import Utils.SpreadsheetReader;
 
 public class TestCaseLogin extends BaseClass{
 	
-	//To run this you can use ParallelTestingAtClassLevel.xml or ParallelTestingAtSuiteLevel.xml or ParallelTestingAtClassLevelWithDifferentBrowser.xml
+	//To run this you can use ParallelTestingAtClassLevelWithDifferentBrowser.xml
 
 	protected ScreenLoginScreen loginScreen;
 	SoftAssert softAssertion;
@@ -19,7 +19,7 @@ public class TestCaseLogin extends BaseClass{
 	static List<List<Object>> values = null;
 
 	@BeforeTest
-	public void setUp() {
+	public void setUpLogin() {
 		loginScreen = new ScreenLoginScreen(driver);
 
 		try {

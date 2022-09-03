@@ -14,7 +14,7 @@ public class TestCaseSignUp extends BaseClass{
 	SoftAssert softAssertion;
 	
 	@BeforeTest
-	public void setUp() {
+	public void setUpRegistration() {
 		resistrationScreen = new ScreenRegistrationScreen(driver);
 		loginScreen = new ScreenLoginScreen(driver);
 	}

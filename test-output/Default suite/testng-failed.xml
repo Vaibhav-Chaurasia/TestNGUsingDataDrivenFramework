@@ -3,18 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNG0018FrameworkIntegration.TestCaseSignUp">
+      <class name="TestNG0019ParallelTestingFrameworkIntegration.BaseClass">
         <methods>
+          <include name="testBaseSetup"/>
+          <include name="getResult"/>
+          <include name="quitDriver"/>
+          <include name="startReport"/>
           <include name="teardown"/>
           <include name="tearDown"/>
-          <include name="testBaseSetup"/>
-          <include name="enterIncorrectFormat"/>
-          <include name="quitDriver"/>
-          <include name="getResult"/>
-          <include name="setUp"/>
-          <include name="startReport"/>
         </methods>
-      </class> <!-- TestNG0018FrameworkIntegration.TestCaseSignUp -->
+      </class> <!-- TestNG0019ParallelTestingFrameworkIntegration.BaseClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
