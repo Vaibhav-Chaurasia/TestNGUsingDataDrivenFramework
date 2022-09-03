@@ -98,11 +98,11 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>
 							<!--In case Single testng file - ${project.basedir}\testng.xml -->
-							${project.basedir}\testngReports.xml
+							<!-- ${project.basedir}\testngReports.xml -->
 							<!--In case of multiple testng files - Go to Run Configuration -> 
 								Maven -> Create new configuration -> Select working directory -> Add goals 
 								"clean test -Dsurefire.suiteXmlFiles=Testngfile1.xml, testngfile2.xml" -->
-							<!-- ${suiteXmlFile} -->
+							${suiteXmlFile}
 						</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>

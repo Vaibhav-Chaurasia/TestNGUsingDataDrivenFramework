@@ -144,3 +144,9 @@ a. It is possible only in one scenario when parameter is defined in an individua
 
 Important Note - Parallel testing is not reliable as compare to sequential testing. As, frequently test cases will failed as it doesn't give an accurate results.
 It means rate of failure of test cases in parallel testing is very frequent.
+
+Reason -
+1. If, we create same test cases for multiple browser or same browser launched for multiple times, then test cases got confused and try to find
+xpaths and try to run in each other's instance.
+2. Processing speed becomes slow.
+3. Try either by parameterization/dataprovider/Selenium grid, we can able to launch multiple browser but to run test case, there is no guarantee.

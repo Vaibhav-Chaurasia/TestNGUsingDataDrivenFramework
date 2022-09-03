@@ -68,6 +68,8 @@ public class BaseClass {
 			driver = new ChromeDriver();
 			capability = ((RemoteWebDriver) driver).getCapabilities(); //Remote Web Driver to get Browser info
 			driver.get(baseURL);
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		}
 
 		else if(sBrowserName.equalsIgnoreCase("FIREFOX")) {
@@ -75,14 +77,15 @@ public class BaseClass {
 			driver = new FirefoxDriver();
 			capability = ((RemoteWebDriver) driver).getCapabilities(); //Remote Web Driver to get Browser info
 			driver.get(baseURL);
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		}
 
 		else {
 			System.out.println("Browser Not On the List");
 		}
 
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
 	}
 
 	@AfterTest

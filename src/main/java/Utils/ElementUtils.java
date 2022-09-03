@@ -26,9 +26,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.io.Files;
 
-import TestNG0018FrameworkIntegration.BaseClass;
-
-public class ElementUtils extends BaseClass{
+public class ElementUtils {
 
 	//Declaring variables
 	static int count = 0;
