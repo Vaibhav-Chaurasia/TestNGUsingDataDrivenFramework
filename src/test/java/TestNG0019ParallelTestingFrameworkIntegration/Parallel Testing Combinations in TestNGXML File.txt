@@ -150,3 +150,7 @@ Reason -
 xpaths and try to run in each other's instance.
 2. Processing speed becomes slow.
 3. Try either by parameterization/dataprovider/Selenium grid, we can able to launch multiple browser but to run test case, there is no guarantee.
+
+
+Parallel testing is possible when same test cases -
+1. Create different packages for different browsers but test case should be same.
