@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.mortbay.log.Log;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -27,6 +26,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import Utils.ElementUtils;
+import Utils.Log;
 import Utils.SpreadsheetReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -223,7 +223,7 @@ public class BaseClass {
 		//To write or update test information to reporter
 		//This code is written in aftersuite. So, that it executes only once.
 		extent.setSystemInfo("Browser Name", capability.getBrowserName());
-		extent.setSystemInfo("Browser Version", capability.getVersion());
+		extent.setSystemInfo("Browser Version", capability.getBrowserVersion());
 		
 		extent.flush();
 	}

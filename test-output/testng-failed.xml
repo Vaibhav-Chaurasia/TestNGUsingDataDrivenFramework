@@ -1,37 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="2" parallel="tests" name="ParallelTestingInChromeLogin(failed)">
-    <classes>
-      <class name="TestNG0018FrameworkIntegration.TestCaseSignUp">
-        <methods>
-          <include name="teardown"/>
-          <include name="tearDown"/>
-          <include name="isIAgreeValidationMessageDisplayed"/>
-          <include name="testBaseSetup"/>
-          <include name="quitDriver"/>
-          <include name="getResult"/>
-          <include name="setUpRegistration"/>
-          <include name="startReport"/>
-        </methods>
-      </class> <!-- TestNG0018FrameworkIntegration.TestCaseSignUp -->
-    </classes>
-  </test> <!-- ParallelTestingInChromeLogin(failed) -->
-  <test thread-count="2" parallel="tests" name="ParallelTestingInChromeSignUp(failed)">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="TestNG0018FrameworkIntegration.TestCaseLogin">
         <methods>
-          <include name="teardown"/>
-          <include name="requiredFieldValidation"/>
           <include name="tearDown"/>
+          <include name="requiredFieldValidation"/>
           <include name="testBaseSetup"/>
+          <include name="teardown"/>
+          <include name="startReport"/>
           <include name="setUpLogin"/>
           <include name="quitDriver"/>
           <include name="getResult"/>
-          <include name="enterIncorrectFormat"/>
-          <include name="startReport"/>
         </methods>
       </class> <!-- TestNG0018FrameworkIntegration.TestCaseLogin -->
     </classes>
-  </test> <!-- ParallelTestingInChromeSignUp(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

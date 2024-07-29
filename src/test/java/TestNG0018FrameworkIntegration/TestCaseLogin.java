@@ -30,8 +30,10 @@ public class TestCaseLogin extends BaseClass{
 	}
 
 	@Test (priority = 1)
-	public void requiredFieldValidation(){
+	public void requiredFieldValidation() {
 		softAssertion = new SoftAssert();
+		
+		//loginScreen.enterPasswordTest("def");
 
 		//Click on loginButton
 		loginScreen.clickLoginButton();

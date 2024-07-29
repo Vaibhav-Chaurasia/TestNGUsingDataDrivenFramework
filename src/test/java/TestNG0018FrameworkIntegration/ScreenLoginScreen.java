@@ -1,11 +1,16 @@
 package TestNG0018FrameworkIntegration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.PageFactoryFinder;
+import org.openqa.selenium.support.locators.RelativeLocator;
 
 import Utils.ElementUtils;
+import lombok.experimental.FieldDefaults;
 
 public class ScreenLoginScreen {
 
@@ -30,6 +35,12 @@ public class ScreenLoginScreen {
 	@FindBy(xpath = "//a[contains(text(),'Sign up')]")
 	WebElement clickSignupLink;
 	
+	@FindBy(id = "userpassword")
+	WebElement password;
+	
+	@FindBy(id = "email")
+	WebElement email;
+	
 	public ScreenLoginScreen(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -44,6 +55,12 @@ public class ScreenLoginScreen {
 	public void enterInvalidPassword(String Password) {
 		ElementUtils.sleep();
 		ElementUtils.enterText(passwordField, Password);
+	}
+	
+	public void enterPasswordTest(String text) {
+		ElementUtils.sleep();
+		By password = RelativeLocator.with(By.id("userpassword")).below(By.id("email"));
+		ElementUtils.enterText(driver.findElement(password), text);
 	}
 
 	public void clickLoginButton() {

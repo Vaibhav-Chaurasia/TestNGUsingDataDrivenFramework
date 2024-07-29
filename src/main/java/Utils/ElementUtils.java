@@ -5,6 +5,7 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -12,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
-import org.mortbay.log.Log;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
@@ -20,6 +21,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.locators.RelativeLocator;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -38,25 +40,29 @@ public class ElementUtils {
 
 	//Wait till element is clickable and then perform click action on element
 	public static void clickON(WebElement locator, WebDriver driver , int timeout) {
-		WebDriverWait w = new WebDriverWait(driver, 30);
-		w.ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator));
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+		wait.ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator));
 		locator.click();
+	}
+	
+	public static By nearBy(WebElement locator1, WebElement locator2) {		
+		return RelativeLocator.with((By) locator1).below((By) locator2);
 	}
 
 	//Wait till element is visible for simple element
 	public static void isVisible(WebElement locator, WebDriver driver , int timeout) {
 		//		WebDriverWait wait = new WebDriverWait(driver,30);
 		//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[contains(text(),'Search results')]")));
-		WebDriverWait w = new WebDriverWait(driver, 60);
-		w.ignoring(StaleElementReferenceException.class).until(ExpectedConditions.visibilityOf(locator));
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+		wait.ignoring(StaleElementReferenceException.class).until(ExpectedConditions.visibilityOf(locator));
 		locator.click();
 	}
 
 
 	//Wait till element is visible for List
 	public static void isVisibleinList(List<WebElement> locator, WebDriver driver , int timeout) {
-		WebDriverWait w = new WebDriverWait(driver, 60);
-		w.ignoring(StaleElementReferenceException.class).until(ExpectedConditions.visibilityOfAllElements(locator));
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+		wait.ignoring(StaleElementReferenceException.class).until(ExpectedConditions.visibilityOfAllElements(locator));
 	}
 
 
@@ -68,8 +74,8 @@ public class ElementUtils {
 
 	//Wait till element is clears and then perform clear action on element
 	public void clearElement(WebElement locator, WebDriver driver , int timeout) {
-		WebDriverWait w = new WebDriverWait(driver, 30);
-		w.ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator));
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+		wait.ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator));
 		locator.clear();
 	}
 
@@ -358,7 +364,7 @@ public class ElementUtils {
 	{
 		LocalDate InputDate = null;
 		LocalDate CurrentDate = null;
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOf(Calendar));
 
 		try {

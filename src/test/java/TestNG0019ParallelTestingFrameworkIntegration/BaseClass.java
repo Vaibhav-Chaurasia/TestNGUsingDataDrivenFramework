@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.mortbay.log.Log;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -28,6 +27,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import Utils.ElementUtils;
+import Utils.Log;
 import Utils.SpreadsheetReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -219,17 +219,17 @@ public class BaseClass {
 			test.log(Status.FAIL, result.getThrowable(), MediaEntityBuilder
 					.createScreenCaptureFromPath(ElementUtils.getScreenShot(driver, result.getName())).build());
 			test.log(Status.FAIL, MarkupHelper.createLabel("Browser - " + capability.getBrowserName(), ExtentColor.RED));
-			test.log(Status.FAIL, MarkupHelper.createLabel("Version - " + capability.getVersion(), ExtentColor.RED));
+			test.log(Status.FAIL, MarkupHelper.createLabel("Version - " + capability.getBrowserVersion(), ExtentColor.RED));
 		}
 		else if (result.getStatus() == ITestResult.SKIP) {
 			test.log(Status.SKIP, MarkupHelper.createLabel(result.getName() + " - Test Case Skipped", ExtentColor.ORANGE));
 			test.log(Status.SKIP, MarkupHelper.createLabel("Browser - " + capability.getBrowserName(), ExtentColor.ORANGE));
-			test.log(Status.SKIP, MarkupHelper.createLabel("Version - " + capability.getVersion(), ExtentColor.ORANGE));
+			test.log(Status.SKIP, MarkupHelper.createLabel("Version - " + capability.getBrowserVersion(), ExtentColor.ORANGE));
 		}
 		else if (result.getStatus() == ITestResult.SUCCESS) {
 			test.log(Status.PASS, MarkupHelper.createLabel(result.getName() + " - Test Case Passed", ExtentColor.GREEN));
 			test.log(Status.PASS, MarkupHelper.createLabel("Browser - " + capability.getBrowserName(), ExtentColor.GREEN));
-			test.log(Status.PASS, MarkupHelper.createLabel("Version - " + capability.getVersion(), ExtentColor.GREEN));
+			test.log(Status.PASS, MarkupHelper.createLabel("Version - " + capability.getBrowserVersion(), ExtentColor.GREEN));
 		}
 	}
 
