@@ -4,12 +4,10 @@ import org.testng.annotations.Test;
 
 import Utils.ExcelDataConfig;
 
-public class ReadCompleteDataOfSheet {
+public class ReadCompleteDataFromSheet {
 	@Test
 	public void readCompleteData() {
 		ExcelDataConfig dataConfig = new ExcelDataConfig("TestData.xlsx");
-		
-		//Sheet index number to be filled in parameters
 		dataConfig.getCompleteData(0);
 	}
 }

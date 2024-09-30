@@ -3,18 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNG0018FrameworkIntegration.TestCaseLogin">
+      <class name="TestNG0012TestNGXMLOperations.DataProviderUsingExcel">
         <methods>
-          <include name="tearDown"/>
-          <include name="requiredFieldValidation"/>
-          <include name="testBaseSetup"/>
-          <include name="teardown"/>
-          <include name="startReport"/>
-          <include name="setUpLogin"/>
-          <include name="quitDriver"/>
-          <include name="getResult"/>
+          <include name="loginForm"/>
         </methods>
-      </class> <!-- TestNG0018FrameworkIntegration.TestCaseLogin -->
+      </class> <!-- TestNG0012TestNGXMLOperations.DataProviderUsingExcel -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

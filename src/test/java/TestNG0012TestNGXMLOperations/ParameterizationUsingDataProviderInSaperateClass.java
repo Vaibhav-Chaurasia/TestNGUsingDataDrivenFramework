@@ -13,7 +13,7 @@ public class ParameterizationUsingDataProviderInSaperateClass {
 	
 public WebDriver driver;
 	
-	@Test (dataProvider = "EmailForm", dataProviderClass = DataProviderSimple.class)
+	@Test (dataProvider = "EmailForm", dataProviderClass = DataProviderUsingExcel.class)
 	public void loginForm(String email, String password) throws InterruptedException {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
